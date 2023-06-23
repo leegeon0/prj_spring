@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="resources/css/style.css">
-    <script src="resources/js/jquery-3.6.4.min.js"></script>
-    <script src="resources/js/portfolio.js"></script>
+    <script src="resources/assets/js/jquery-3.6.4.min.js"></script>
+    <script src="resources/assets/js/portfolio.js"></script>
 </head>
 <body>
     <div id="wrap">
@@ -67,6 +67,7 @@
             </div>
             <div class="manager">
                 <h2>관리자 페이지</h2>
+                <a href="home2">이동</a>
             </div>
         </section>
     </div>
