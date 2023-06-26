@@ -69,7 +69,7 @@
                 <div class="cover-photo"></div>
                 <div class="profile-photo"></div>
                 <h1 class="welcome">Welcome</h1>
-                <a href="home3" class="btn-goback">continue</a>
+                <a href="home4" class="btn-goback">continue</a>
             </div>
         </div>
 
