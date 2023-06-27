@@ -51,6 +51,37 @@
  	
  	
  	</select>
+ 	
+ <update id="update" >
+ 	update
+ 		codegroup
+ 	set
+ 		nameFull = #{nameFull}
+ 	where
+ 		seq = #{seq}
  
+ 
+ </update>
+ 
+ <delete id="delete">
+ 	delete
+ 	from
+ 		codegroup
+ 	where
+ 		seq = #{seq}
+ 		
+ 
+ </delete>
+ 
+ <insert id="insert">
+ 	insert into `codegroup`(
+ 		seq,
+ 		nameFull
+ 		)value(
+ 			#{seq},
+ 			#{nameFull}
+ 		)
+ 
+ </insert>
  
  </mapper>

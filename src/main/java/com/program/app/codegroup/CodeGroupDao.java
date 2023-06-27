@@ -43,9 +43,30 @@ public class CodeGroupDao{
 	public CodeGroup selectOne(CodeGroupVo vo){
 		
 		CodeGroup codeGroup = sqlSession.selectOne(namespace + ".selectOne", vo);
-		// selectOne(); 메서드의 리턴값은 정수이므로 int를 사용
 		return codeGroup;
 		
 	}
+	
+	
+	public int update(CodeGroup dto){
+//		
+//		int codeGroup2 = sqlSession.update(namespace + ".update", dto);
+//		return codeGroup2;
+		return sqlSession.update(namespace + ".update", dto);
+		
+	}
+	
+	public int delete(CodeGroup dto){
+
+		return sqlSession.delete(namespace + ".delete", dto);
+		
+	}
+	
+	public int insert(CodeGroup dto){
+
+		return sqlSession.insert(namespace + ".insert", dto);
+		
+	}
+	
 	
 }

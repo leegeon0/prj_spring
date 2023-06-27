@@ -10,7 +10,7 @@
 
 
 
-<form name="formList" method="post">
+<form class="searchForm" name="formList" method="post">
 	<select name="shOption">
 		<option value="">-선택-</option>
 		<option value="1">1</option>
@@ -19,11 +19,12 @@
 	
 	<input type="text" name="shKeyword">
 	
-	<button type="button" class="btn btn-primary" id="btn">저장</button>
+	<button type="button" class="btn btn-primary" id="btn">검색</button>
+	<a href="codeGroupForm"><button type="button" class="btn btn-primary" id="insertBtn">추가</button></a>
+	
 </form>
 
 <br>
-
 
 <c:choose>
 	<c:when test="${fn:length(list) eq 0}">
@@ -35,7 +36,6 @@
 		<c:forEach items="${list}" var="list" varStatus="status">
 			<c:out value="${list.seq}"></c:out>
 			<a href="codeGroupForm?seq=<c:out value="${list.seq}"/>"><c:out value="${list.nameFull}"/></a>
-			
 			<br>
 		</c:forEach>
 	</c:otherwise>
