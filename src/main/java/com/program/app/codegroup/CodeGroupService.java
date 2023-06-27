@@ -16,4 +16,6 @@ public interface CodeGroupService {
 	public int delete(CodeGroup dto);
 	
 	public int insert(CodeGroup dto);
+	
+	public int uelete(CodeGroup dto);
 }

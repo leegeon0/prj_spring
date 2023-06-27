@@ -77,5 +77,15 @@ public class CodeGroupController {
 		return "redirect:/codeGroupList";
 	}
 	
+	@RequestMapping("/codeGroupUele")
+	public String codeGroupUele(CodeGroup dto) {
+		
+		System.out.println("codeGroupUele");
+		service.uelete(dto);
+		
+		
+		return "redirect:/codeGroupList";
+	}
+	
 
 }

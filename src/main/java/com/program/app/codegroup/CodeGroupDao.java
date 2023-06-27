@@ -68,5 +68,11 @@ public class CodeGroupDao{
 		
 	}
 	
+	public int uelete(CodeGroup dto){
+
+		return sqlSession.update(namespace + ".uelete", dto);
+		
+	}
+	
 	
 }

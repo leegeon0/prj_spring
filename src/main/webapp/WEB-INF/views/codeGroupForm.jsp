@@ -10,10 +10,12 @@
 
 
 <form class="submitForm" name="form" method="post">
-<input type="text" class="form-control" id="seq" name="seq" required value="<c:out value="${item.seq}"/>">
+<input type="text" class="form-control" id="seq" name="seq" required readonly value="<c:out value="${item.seq}"/>">
 <input type="text" class="form-control" id="nameFull" name="nameFull" required value="<c:out value="${item.nameFull}"/>">
+<input type="text" class="form-control" id="delNy" name="delNy" required value="<c:out value="${item.delNy}"/>">
 <button type="button" class="btn btn-primary" id="submitBtn">저장</button>
 	<button type="button" class="btn btn-primary" id="updateBtn">업데이트</button>
+	<button type="button" class="btn btn-primary" id="ueleteBtn">사용/해제</button>
 	<button type="button" class="btn btn-primary" id="deleteBtn">삭제</button>
 </form>
 
@@ -41,4 +43,11 @@
 
 		 
 });
+ 
+ $("#ueleteBtn").on("click",function(){
+		
+		alert("적용완료");
+		$("form[name=form]").attr("action","/codeGroupUele").submit();
+		 
+	 });
 </script>

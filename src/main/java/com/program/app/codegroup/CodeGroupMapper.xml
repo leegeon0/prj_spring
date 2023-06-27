@@ -34,6 +34,8 @@
  			codegroup
  			where
  			nameFull like concat('%',#{shKeyword},'%')
+<!--  		and
+ 			delNy = 0; -->
  			<!-- 문자 검색은 대부분 like를 사용 -->
  	
  	
@@ -42,7 +44,8 @@
  		<select id="selectOne" resultMap="resultMapObj">
  		select
  			seq,
- 			nameFull
+ 			nameFull,
+ 			delNy
  		from
  			codegroup
  		where
@@ -59,8 +62,6 @@
  		nameFull = #{nameFull}
  	where
  		seq = #{seq}
- 
- 
  </update>
  
  <delete id="delete">
@@ -74,14 +75,22 @@
  </delete>
  
  <insert id="insert">
- 	insert into `codegroup`(
- 		seq,
+ 	insert into 
+ 	codegroup(
  		nameFull
  		)value(
- 			#{seq},
  			#{nameFull}
  		)
  
  </insert>
+ 
+ <update id="uelete">
+	update
+ 		codegroup
+ 	set
+ 		delNy = #{delNy}
+ 	where
+ 		seq = #{seq} 
+ </update>
  
  </mapper>

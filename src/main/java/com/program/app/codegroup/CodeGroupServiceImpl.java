@@ -62,6 +62,12 @@ public class CodeGroupServiceImpl implements CodeGroupService{
 		// TODO Auto-generated method stub
 		return dao.insert(dto);
 	}
+
+	@Override
+	public int uelete(CodeGroup dto) {
+		// TODO Auto-generated method stub
+		return dao.uelete(dto);
+	}
 	
 
 	

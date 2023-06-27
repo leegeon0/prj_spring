@@ -36,6 +36,7 @@
 		<c:forEach items="${list}" var="list" varStatus="status">
 			<c:out value="${list.seq}"></c:out>
 			<a href="codeGroupForm?seq=<c:out value="${list.seq}"/>"><c:out value="${list.nameFull}"/></a>
+			<c:out value="${list.delNy}"></c:out>
 			<br>
 		</c:forEach>
 	</c:otherwise>
