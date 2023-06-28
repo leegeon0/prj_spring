@@ -42,9 +42,9 @@
                     <label for="email">Email</label>
                     <input class="form-styling" type="text" name="email" placeholder="" />
                     <label for="password">Password</label>
-                    <input class="form-styling" type="text" name="password" placeholder="" />
+                    <input class="form-styling" type="password" name="password" placeholder="" />
                     <label for="confirmpassword">Confirm password</label>
-                    <input class="form-styling" type="text" name="confirmpassword" placeholder="" />
+                    <input class="form-styling" type="password" name="confirmpassword" placeholder="" />
                     <a ng-click="checked = !checked" class="btn-signup">Sign Up</a>
                 </form>
 
@@ -56,7 +56,9 @@
                   c3.894-6.28,11.169-10.243,19.283-9.348c9.258,1.021,16.694,8.542,17.622,17.81c1.232,12.295-8.683,22.607-20.849,22.042
                   c-9.9-0.46-18.128-8.344-18.972-18.218c-0.292-3.416,0.276-6.673,1.51-9.578" />
                         <div class="successtext">
+                        <a class="btn-goback" value="Refresh" onClick="history.go()" style="top : -40px; opacity : 1; width : 70%;">Go back</a>
                             <p> Thanks for signing up! Check your email for confirmation.</p>
+                            
                         </div>
                 </div>
             </div>
@@ -69,7 +71,7 @@
                 <div class="cover-photo"></div>
                 <div class="profile-photo"></div>
                 <h1 class="welcome">Welcome</h1>
-                <a href="home4" class="btn-goback">continue</a>
+                <a href="indexXdmView" class="btn-goback">continue</a>
             </div>
         </div>
 

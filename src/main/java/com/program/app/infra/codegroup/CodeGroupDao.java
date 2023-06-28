@@ -1,4 +1,4 @@
-package com.program.app.codegroup;
+package com.program.app.infra.codegroup;
 
 import java.util.List;
 
@@ -32,7 +32,7 @@ public class CodeGroupDao{
 	@Resource(name = "sqlSession")
 	private SqlSession sqlSession;
 	
-	private static String namespace = "com.program.app.codegroup.CodeGroupMapper";
+	private static String namespace = "com.program.app.infra.codegroup.CodeGroupMapper";
 	
 	public List<CodeGroup> selectList(CodeGroupVo vo){
 		

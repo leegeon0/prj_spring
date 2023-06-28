@@ -1,4 +1,4 @@
-package com.program.app.codegroup;
+package com.program.app.infra.codegroup;
 
 // 디비컬럼명 첫글자는 소문자
 // seq는 편의상 디비에는 int지만 자바에서는 String으로 사용된다.

@@ -1,4 +1,56 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
+
+<!-- 
+<c:choose>
+	<c:when test="${fn:length(list) eq 0}">
+		<tr>
+			<td class="text-center" colspan="9">There is no data!</td>
+		</tr>	
+	</c:when>
+	<c:otherwise>
+		<c:forEach items="${list}" var="list" varStatus="status">
+			<c:out value="${list.seq}"></c:out>
+			<c:out value="${list.nameFull}"></c:out><br>
+		</c:forEach>
+	</c:otherwise>
+</c:choose>
+ --!>
+
+<!-- <!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>yep</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js">
+    
+</script>
+    
+  </head>
+  <body>
+    <form class="row g-3 needs-validation" novalidate>
+  <div class="col-md-4" style="width : 300px;">
+    <label for="validationCustom01" class="form-label">제목</label>
+    <input type="text" class="form-control" id="validationCustom01" value="" required>
+  </div>
+  <div class="col-md-4" style="width : 300px;">
+    <label for="validationCustom02" class="form-label">이름</label>
+    <input type="text" class="form-control" id="validationCustom02" value="" required>
+  </div>
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">저장</button>
+  </div>
+</form>
+  </body>
+</html> -->
+
+
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -29,6 +81,15 @@
 
   <!-- Template Main CSS File -->
   <link href="/resources/assets/css/style.css" rel="stylesheet">
+  
+  <style type="text/css">
+  
+  .sm{
+  	dispaly : flex;
+  }
+  
+  </style>
+   
 
   <!-- =======================================================
   * Template Name: NiceAdmin
@@ -526,59 +587,36 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Datatables</h5>
+              <h5 class="card-title">Datatables Edit</h5>
               <p>Add lightweight datatables to your project with using the <a href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable</p>
-
+               <form class="submitForm" name="form" method="post">
+				   <table class="table">
+                	<thead>
+		                <tr>
+		                    <th scope="col">seq</th>
+		                    <th scope="col">nameFull</th>
+		                    <th scope="col">delNy</th>
+		                </tr>
+                	</thead>
+	                <tbody>
+	                <tr>
+		                <td><input type="text" class="form-control" id="seq" name="seq" required readonly value="<c:out value="${item.seq}"/>"></td>
+		                <td><input type="text" class="form-control" id="nameFull" name="nameFull" required value="<c:out value="${item.nameFull}"/>"></td>
+		                <td><input type="text" class="form-control" id="delNy" name="delNy" required value="<c:out value="${item.delNy}"/>"></td>	
+					</tr>
+	                </tbody>
+              		</table>
+              		<button type="button" class="btn btn-primary" id="submitBtn">저장</button>
+					<button type="button" class="btn btn-primary" id="updateBtn">업데이트</button>
+					<button type="button" class="btn btn-primary" id="ueleteBtn">사용/해제</button>
+					<button type="button" class="btn btn-primary" id="deleteBtn">삭제</button>
+				</form>
+			
               <!-- Table with stripped rows -->
-              <table class="table datatable">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Position</th>
-                    <th scope="col">Age</th>
-                    <th scope="col">Start Date</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Brandon Jacob</td>
-                    <td>Designer</td>
-                    <td>28</td>
-                    <td>2016-05-25</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Bridie Kessler</td>
-                    <td>Developer</td>
-                    <td>35</td>
-                    <td>2014-12-05</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Ashleigh Langosh</td>
-                    <td>Finance</td>
-                    <td>45</td>
-                    <td>2011-08-12</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td>Angus Grady</td>
-                    <td>HR</td>
-                    <td>34</td>
-                    <td>2012-06-11</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">5</th>
-                    <td>Raheem Lehner</td>
-                    <td>Dynamic Division Officer</td>
-                    <td>47</td>
-                    <td>2011-04-19</td>
-                  </tr>
-                </tbody>
-              </table>
+             
               <!-- End Table with stripped rows -->
+
+              
 
             </div>
           </div>
@@ -614,10 +652,47 @@
   <script src="/resources/assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="/resources/assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="/resources/assets/vendor/php-email-form/validate.js"></script>
+   
 
   <!-- Template Main JS File -->
   <script src="/resources/assets/js/main.js"></script>
+  
+  <script src="/resources/assets/js/jquery-3.6.4.min.js"></script>
+  
+  <script type="text/javascript">
+  $("#submitBtn").on("click",function(){
+	 	
+	 	alert("저장완료");
+	 	$("form[name=form]").attr("action","/codeGroupInsert").submit();
+	 	 
+	  });
+	  $("#updateBtn").on("click",function(){
+	 	
+	 	alert("업데이트완료");
+	 	$("form[name=form]").attr("action","/codeGroupUpdt").submit();
+	 	 
+	  });
+	  
+	  $("#deleteBtn").on("click",function(){
+	 		
+	 		alert("삭제완료");
+	 		$("form[name=form]").attr("action","/codeGroupDel").submit();
+
+	 		 
+	 });
+	  
+	  $("#ueleteBtn").on("click",function(){
+	 		
+	 		alert("적용완료");
+	 		$("form[name=form]").attr("action","/codeGroupUele").submit();
+	 		 
+	 	 });
+  
+  </script>
 
 </body>
 
 </html>
+
+
+

@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -67,7 +69,7 @@
             </div>
             <div class="manager">
                 <h2>관리자 페이지</h2>
-                <a href="home2">이동</a>
+                <a href="loginPage">이동</a>
             </div>
         </section>
     </div>

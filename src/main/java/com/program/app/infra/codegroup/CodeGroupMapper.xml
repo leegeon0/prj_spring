@@ -23,17 +23,27 @@
 
 </mapper>    --> 
  
-<mapper namespace="com.program.app.codegroup.CodeGroupMapper">
+<mapper namespace="com.program.app.infra.codegroup.CodeGroupMapper">
 
-	<resultMap type="com.program.app.codegroup.CodeGroup" id="resultMapObj"></resultMap>
+	<resultMap type="com.program.app.infra.codegroup.CodeGroup" id="resultMapObj"></resultMap>
+ 
+ 	<sql id="abc">
+ 		seq,
+ 		nameFull,
+ 		delNy
+ 	</sql>
+ 
  
  	<select id="selectList" resultMap="resultMapObj">
  		select
- 			*
+ 			<include refid="abc" />
+ 			<!-- <include refid="abc" /> -->
  		from
  			codegroup
- 			where
- 			nameFull like concat('%',#{shKeyword},'%')
+ 			where 1=1
+ 		<if test="shKeyword != null and !shKeyword.equals('')">
+ 			and nameFull like concat('%',#{shKeyword},'%')
+ 		</if>		 
 <!--  		and
  			delNy = 0; -->
  			<!-- 문자 검색은 대부분 like를 사용 -->
@@ -43,13 +53,11 @@
  	
  		<select id="selectOne" resultMap="resultMapObj">
  		select
- 			seq,
- 			nameFull,
- 			delNy
+ 			<include refid="abc" />
  		from
  			codegroup
- 		where
- 			seq = #{seq}
+ 		where 1=1
+ 			and	seq = #{seq}
  			<!-- 문자 검색은 대부분 like를 사용 -->
  	
  	
@@ -60,16 +68,16 @@
  		codegroup
  	set
  		nameFull = #{nameFull}
- 	where
- 		seq = #{seq}
+ 	where 1=1
+ 		and seq = #{seq}
  </update>
  
  <delete id="delete">
  	delete
  	from
  		codegroup
- 	where
- 		seq = #{seq}
+ 	where 1=1
+ 		and seq = #{seq}
  		
  
  </delete>
@@ -89,8 +97,8 @@
  		codegroup
  	set
  		delNy = #{delNy}
- 	where
- 		seq = #{seq} 
+ 	where 1=1
+ 		and seq = #{seq} 
  </update>
  
  </mapper>

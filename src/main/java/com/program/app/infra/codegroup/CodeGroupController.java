@@ -1,4 +1,4 @@
-package com.program.app.codegroup;
+package com.program.app.infra.codegroup;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ public class CodeGroupController {
 	@Autowired
 	CodeGroupServiceImpl service;
 	
-	@RequestMapping("/codeGroupList")
-	public String codeGroupList(CodeGroupVo vo,Model model) {
+	@RequestMapping("/codeGroupXdmList")
+	public String codeGroupXdmList(CodeGroupVo vo,Model model) {
 		
 		System.out.println("controller: vo.getShOption() : " + vo.getShOption());
 		System.out.println("controller: vo.getShKeyword() : " + vo.getShKeyword());
@@ -25,11 +25,11 @@ public class CodeGroupController {
 		
 //		model.addAttribute("list",service.selectList(); 위에 두줄 대신에 사용가능
 		
-		return "codeGroupList";
+		return "xdm/infra/codegroup/codeGroupXdmList";
 	}
 	
-	@RequestMapping("/codeGroupForm")
-	public String codeGroupForm(CodeGroupVo vo,Model model) {
+	@RequestMapping("/codeGroupXdmForm")
+	public String codeGroupXdmForm(CodeGroupVo vo,Model model) {
 		
 //		System.out.println("vo.getSeq(): " + vo.getSeq());
 		
@@ -42,7 +42,7 @@ public class CodeGroupController {
 		
 //		model.addAttribute("list",service.selectList(); 위에 두줄 대신에 사용가능
 		
-		return "codeGroupForm";
+		return "xdm/infra/codegroup/codeGroupXdmForm";
 	}
 	
 	
@@ -53,7 +53,7 @@ public class CodeGroupController {
 		service.update(dto);
 		
 		
-		return "redirect:/codeGroupList";
+		return "redirect:/codeGroupXdmList";
 	}
 	
 	@RequestMapping("/codeGroupDel")
@@ -63,7 +63,7 @@ public class CodeGroupController {
 		service.delete(dto);
 		
 		
-		return "redirect:/codeGroupList";
+		return "redirect:/codeGroupXdmList";
 	}
 	
 	
@@ -74,7 +74,7 @@ public class CodeGroupController {
 		service.insert(dto);
 		
 		
-		return "redirect:/codeGroupList";
+		return "redirect:/codeGroupXdmList";
 	}
 	
 	@RequestMapping("/codeGroupUele")
@@ -84,7 +84,9 @@ public class CodeGroupController {
 		service.uelete(dto);
 		
 		
-		return "redirect:/codeGroupList";
+		return "redirect:/codeGroupXdmList";
+		// 경로가 없다면 redirect:/ 추가
+		// 경로가 있다면 해당 JSP로 return
 	}
 	
 

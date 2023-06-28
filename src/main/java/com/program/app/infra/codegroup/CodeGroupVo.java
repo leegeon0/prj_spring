@@ -1,4 +1,4 @@
-package com.program.app.codegroup;
+package com.program.app.infra.codegroup;
 
 public class CodeGroupVo {
 	private Integer shOption;
