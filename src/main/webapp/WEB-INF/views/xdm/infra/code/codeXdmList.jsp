@@ -5,50 +5,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
-<!-- 
-<c:choose>
-	<c:when test="${fn:length(list) eq 0}">
-		<tr>
-			<td class="text-center" colspan="9">There is no data!</td>
-		</tr>	
-	</c:when>
-	<c:otherwise>
-		<c:forEach items="${list}" var="list" varStatus="status">
-			<c:out value="${list.seq}"></c:out>
-			<c:out value="${list.nameFull}"></c:out><br>
-		</c:forEach>
-	</c:otherwise>
-</c:choose>
- --!>
 
-<!-- <!doctype html>
-<html lang="ko">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>yep</title>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js">
-    
-</script>
-    
-  </head>
-  <body>
-    <form class="row g-3 needs-validation" novalidate>
-  <div class="col-md-4" style="width : 300px;">
-    <label for="validationCustom01" class="form-label">제목</label>
-    <input type="text" class="form-control" id="validationCustom01" value="" required>
-  </div>
-  <div class="col-md-4" style="width : 300px;">
-    <label for="validationCustom02" class="form-label">이름</label>
-    <input type="text" class="form-control" id="validationCustom02" value="" required>
-  </div>
-  <div class="col-12">
-    <button class="btn btn-primary" type="submit">저장</button>
-  </div>
-</form>
-  </body>
-</html> -->
 
 
 <!DOCTYPE html>
@@ -102,7 +59,7 @@
 
 <body>
 
-	<%@include file="codeGroupXdmListTop.jsp"%>
+	<%@include file="codeXdmListTop.jsp"%>
 
 
   <main id="main" class="main">
@@ -153,8 +110,10 @@
 				  	 -->
 		                <tr>
 		                    <th scope="col">seq</th>
-		                    <th scope="col">nameFull</th>
-		                    <th scope="col">delNy</th>
+		                    <th scope="col">name</th>
+		                    <th scope="col">age</th>
+		                    <th scope="col">gender</th>
+		                    <th scope="col">codegroup_seq</th>
 		                </tr>
                 	</thead>
 	                <tbody>
@@ -168,15 +127,17 @@
 							<c:forEach items="${list}" var="list" varStatus="status">
 							<tr>
 								<td><c:out value="${list.seq}"></c:out></td>
-								<td><a href="codeGroupXdmForm?seq=<c:out value="${list.seq}"/>"><c:out value="${list.nameFull}"/></a></td>
-								<td><c:out value="${list.delNy}"></c:out><br></td>
+								<td><a href="codeXdmForm?seq=<c:out value="${list.seq}"/>"><c:out value="${list.name}"/></a></td>
+								<td><c:out value="${list.age}"></c:out><br></td>
+								<td><c:out value="${list.gender}"></c:out><br></td>
+								<td><c:out value="${list.codegroup_seq}"></c:out><br></td>
 							</tr>
 							</c:forEach>
 						</c:otherwise>
 						</c:choose>
 	                </tbody>
               		</table>
-              		<a href="codeGroupXdmForm"><button type="button" class="btn btn-primary" id="insertBtn">추가</button></a>
+              		<a href="codeXdmForm"><button type="button" class="btn btn-primary" id="insertBtn">추가</button></a>
               		<div class="container-fluid px-0 mt-2">
 					    <div class="row">
 					        <div class="col">
@@ -221,7 +182,7 @@
 
   </main><!-- End #main -->
 
-  <%@include file="codeGroupXdmListBottom.jsp"%>
+  <%@include file="codeXdmListBottom.jsp"%>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
@@ -246,7 +207,7 @@
 		
 		/* $("form[name=formList]").attr("method","get"); */
 
-		$("form[name=formList]").attr("action", "/codeGroupXdmList").submit();
+		$("form[name=formList]").attr("action", "/codeXdmList").submit();
 		$("form[name=formList]").attr("method","post");
 		
 		
@@ -254,7 +215,7 @@
   
   goList = function(thisPage) {
 		$("input:hidden[name=thisPage]").val(thisPage);
-		$("form[name=formList]").attr("action", "/codeGroupXdmList").submit();
+		$("form[name=formList]").attr("action", "/codeXdmList").submit();
 	}
   </script>
 

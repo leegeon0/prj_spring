@@ -1,4 +1,4 @@
-package com.program.app.infra.codegroup;
+package com.program.app.infra.code;
 
 import java.util.List;
 
@@ -26,37 +26,37 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 
-public class CodeGroupDao{
+public class CodeDao{
 	
 	@Inject
 	@Resource(name = "sqlSession")
 	private SqlSession sqlSession;
 	
-	private static String namespace = "com.program.app.infra.codegroup.CodeGroupMapper";
+	private static String namespace = "com.program.app.infra.code.CodeMapper";
 	
 	
-	public int selectOneCount(CodeGroupVo vo){
+	public int selectOneCount(CodeVo vo){
 		
 		return sqlSession.selectOne(namespace + ".selectOneCount", vo);
 		
 		}
 	
 	
-	public List<CodeGroup> selectList(CodeGroupVo vo){
+	public List<Code> selectList(CodeVo vo){
 		
 		return sqlSession.selectList(namespace + ".selectList", vo);
 		
 	}
 	
-	public CodeGroup selectOne(CodeGroupVo vo){
+	public Code selectOne(CodeVo vo){
 		
-		CodeGroup codeGroup = sqlSession.selectOne(namespace + ".selectOne", vo);
+		Code codeGroup = sqlSession.selectOne(namespace + ".selectOne", vo);
 		return codeGroup;
 		
 	}
 	
 	
-	public int update(CodeGroup dto){
+	public int update(Code dto){
 //		
 //		int codeGroup2 = sqlSession.update(namespace + ".update", dto);
 //		return codeGroup2;
@@ -64,19 +64,19 @@ public class CodeGroupDao{
 		
 	}
 	
-	public int delete(CodeGroup dto){
+	public int delete(Code dto){
 
 		return sqlSession.delete(namespace + ".delete", dto);
 		
 	}
 	
-	public int insert(CodeGroup dto){
+	public int insert(Code dto){
 
 		return sqlSession.insert(namespace + ".insert", dto);
 		
 	}
 	
-	public int uelete(CodeGroup dto){
+	public int uelete(Code dto){
 
 		return sqlSession.update(namespace + ".uelete", dto);
 		

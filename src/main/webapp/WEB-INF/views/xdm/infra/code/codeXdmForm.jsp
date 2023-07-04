@@ -102,8 +102,7 @@
 
 <body>
 
-	<%@include file="codeGroupXdmListTop.jsp"%>
-
+<%@include file="codeXdmListTop.jsp"%>
 
   <main id="main" class="main">
 
@@ -124,86 +123,48 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Datatables</h5>
-               <form class="sm" name="formList" method="post">
-               
-               	<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
-				<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
-				
-				
-                <input type="text" name="shKeyword"  value="<c:out value="${vo.shKeyword}"/>">
-	
-				<button type="button" class="btn btn-primary" id="btn">검색</button>
-					
-					
+              <h5 class="card-title">Datatables Edit</h5>
+               <form class="submitForm" name="form" method="post">
 				   <table class="table">
-				   
                 	<thead>
-                	<!-- 
-                	 	<select name="shOption" style="margin-right : 10px;">
-							<option value="">-선택-</option>
-							<option value="1">1</option>
-							<option value="2">2</option>
-						</select> 
-					    <label for="validationCustom02" class="form-label">이름</label>
-					    <input type="text" name="shKeyword">
-					<div class="btn_tab" style="width : 100px; height : 70px; display : inline;">
-					  	<button type="button" class="btn btn-primary" id="btn" >검색</button>
-				  	</div>
-				  	 -->
 		                <tr>
 		                    <th scope="col">seq</th>
-		                    <th scope="col">nameFull</th>
-		                    <th scope="col">delNy</th>
+		                    <th scope="col">name</th>
+		                    <th scope="col">age</th>
+		                    <th scope="col">gender</th>
+		                    <th scope="col">codegroup_seq</th>
 		                </tr>
                 	</thead>
 	                <tbody>
-						<c:choose>
-						<c:when test="${fn:length(list) eq 0}">
-							<tr>
-								<td class="text-center" colspan="9">There is no data!</td>
-							</tr>	
-						</c:when>
-						<c:otherwise>
-							<c:forEach items="${list}" var="list" varStatus="status">
-							<tr>
-								<td><c:out value="${list.seq}"></c:out></td>
-								<td><a href="codeGroupXdmForm?seq=<c:out value="${list.seq}"/>"><c:out value="${list.nameFull}"/></a></td>
-								<td><c:out value="${list.delNy}"></c:out><br></td>
-							</tr>
-							</c:forEach>
-						</c:otherwise>
-						</c:choose>
+	                <tr>
+		                <td><input type="text" class="form-control" id="seq" name="seq" placeholder="Auto Increment" required readonly value="<c:out value="${item.seq}"/>"></td>
+		                <td><input type="text" class="form-control" id="name" name="name" required value="<c:out value="${item.name}"/>"></td>
+		                <td><input type="text" class="form-control" id="age" name="age" placeholder="Default : 0" required value="<c:out value="${item.age}"/>"></td>
+		                <td><input type="text" class="form-control" id="gender" name="gender" required value="<c:out value="${item.gender}"/>"></td>
+		                <td><input type="text" class="form-control" id="codegroup_seq" name="codegroup_seq" required value="<c:out value="${item.codegroup_seq}"/>"></td>
+					</tr>
 	                </tbody>
               		</table>
-              		<a href="codeGroupXdmForm"><button type="button" class="btn btn-primary" id="insertBtn">추가</button></a>
-              		<div class="container-fluid px-0 mt-2">
-					    <div class="row">
-					        <div class="col">
-					            <!-- <ul class="pagination pagination-sm justify-content-center mb-0"> -->
-					            <ul class="pagination justify-content-center mb-0">
-					                <!-- <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-left"></i></a></li> -->
-					<c:if test="${vo.startPage gt vo.pageNumToShow}">
-					                <li class="page-item"><a class="page-link" href="javascript:goList(${vo.startPage - 1})"><i class="fa-solid fa-angle-left"></i></a></li>
-					</c:if>
-					<c:forEach begin="${vo.startPage}" end="${vo.endPage}" varStatus="i">
-						<c:choose>
-							<c:when test="${i.index eq vo.thisPage}">
-					                <li class="page-item active"><a class="page-link" href="javascript:goList(${i.index})">${i.index}</a></li>
-							</c:when>
-							<c:otherwise>             
-					                <li class="page-item"><a class="page-link" href="javascript:goList(${i.index})">${i.index}</a></li>
-							</c:otherwise>
-						</c:choose>
-					</c:forEach>                
-					<c:if test="${vo.endPage ne vo.totalPages}">                
-					                <li class="page-item"><a class="page-link" href="javascript:goList(${vo.endPage + 1})"><i class="fa-solid fa-angle-right"></i></a></li>
-					</c:if>
-					                <!-- <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-right"></i></a></li> -->
-					            </ul>
-					        </div>
-					    </div>
-					</div>
+
+
+              		<c:choose>
+						<c:when test="${empty item.seq }">
+							<button type="button" class="btn btn-primary" id="submitBtn">저장</button>
+						</c:when>
+						<c:otherwise>
+							<button type="button" class="btn btn-primary" id="updateBtn">업데이트</button>
+<!-- 							<button type="button" class="btn btn-primary" id="ueleteBtn">사용/해제</button> -->
+							<button type="button" class="btn btn-primary" id="deleteBtn">삭제</button>
+						</c:otherwise>	
+					</c:choose>
+
+				<!-- 	 
+					<button type="button" class="btn btn-primary" id="submitBtn">저장</button>
+					<button type="button" class="btn btn-primary" id="updateBtn">업데이트</button>
+					<button type="button" class="btn btn-primary" id="ueleteBtn">사용/해제</button>
+					<button type="button" class="btn btn-primary" id="deleteBtn">삭제</button>
+              	!-->
+			
 				</form>
 			
               <!-- Table with stripped rows -->
@@ -221,9 +182,7 @@
 
   </main><!-- End #main -->
 
-  <%@include file="codeGroupXdmListBottom.jsp"%>
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<%@include file="codeXdmListBottom.jsp"%>
 
   <!-- Vendor JS Files -->
   <script src="/resources/assets/vendor/apexcharts/apexcharts.min.js"></script>
@@ -242,20 +201,47 @@
   <script src="/resources/assets/js/jquery-3.6.4.min.js"></script>
   
   <script type="text/javascript">
-  $("#btn").on("click", function(){
-		
-		/* $("form[name=formList]").attr("method","get"); */
-
-		$("form[name=formList]").attr("action", "/codeGroupXdmList").submit();
-		$("form[name=formList]").attr("method","post");
-		
-		
-	});
+  $("#submitBtn").on("click",function(){
+	 	
+/* 	    var delNyValue = $("#delNy").val();
+	    
+	    if (delNyValue !== "0" && delNyValue !== "1" && delNyValue !== "") {
+	    	event.preventDefault()
+	      alert("delNy는 0과 1만 입력할 수 있습니다.");
+	    	return false;
+	    }else{
+	    	alert("저장완료");	
+	    }  */
+	 	$("form[name=form]").attr("action","/codeInsert").submit();
+	 	 
+	  });
   
-  goList = function(thisPage) {
-		$("input:hidden[name=thisPage]").val(thisPage);
-		$("form[name=formList]").attr("action", "/codeGroupXdmList").submit();
-	}
+  
+	  $("#updateBtn").on("click",function(){
+	 	
+	 	
+	 	$("form[name=form]").attr("action","/codeUpdt").submit();
+	 	 
+	  });
+	  
+	  $("#deleteBtn").on("click",function(){
+	 		
+	 		
+	 		$("form[name=form]").attr("action","/codeDel").submit();
+
+	 		 
+	 });
+	  
+	  $("#ueleteBtn").on("click",function(){
+	 		
+	 		
+	 		$("form[name=form]").attr("action","/codeUele").submit();
+	 		 
+	 });
+	  
+
+
+  
   </script>
 
 </body>

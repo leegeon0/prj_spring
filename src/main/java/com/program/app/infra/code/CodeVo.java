@@ -1,8 +1,8 @@
-package com.program.app.infra.codegroup;
+package com.program.app.infra.code;
 
 
 
-public class CodeGroupVo {
+public class CodeVo {
 	
 //	paging
 	private int thisPage = 1;									// 현재 페이지

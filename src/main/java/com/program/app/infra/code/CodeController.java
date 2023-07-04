@@ -1,4 +1,4 @@
-package com.program.app.infra.codegroup;
+package com.program.app.infra.code;
 
 import java.util.List;
 import java.util.Map;
@@ -16,12 +16,12 @@ import org.springframework.web.servlet.support.RequestContextUtils;
 
 
 @Controller
-public class CodeGroupController {
+public class CodeController {
 	@Autowired
-	CodeGroupServiceImpl service;
+	CodeServiceImpl service;
 	
-	@RequestMapping("/codeGroupXdmList")
-	public String codeGroupXdmList(@ModelAttribute("vo") CodeGroupVo vo,Model model) {
+	@RequestMapping("/codeXdmList")
+	public String codeXdmList(@ModelAttribute("vo") CodeVo vo,Model model) {
 		
 		/*
 		 * System.out.println("controller: vo.getShOption() : " + vo.getShOption());
@@ -33,7 +33,7 @@ public class CodeGroupController {
 		vo.setParamsPaging(service.selectOneCount(vo));
 		
 		if(vo.getTotalRows()>0) {
-			List<CodeGroup> list = service.selectList(vo);
+			List<Code> list = service.selectList(vo);
 			model.addAttribute("list",list);
 		} else {
 			// by pass
@@ -48,66 +48,66 @@ public class CodeGroupController {
 		
 //		model.addAttribute("list",service.selectList(); 위에 두줄 대신에 사용가능
 		
-		return "xdm/infra/codegroup/codeGroupXdmList";
+		return "xdm/infra/code/codeXdmList";
 	}
 	
-	@RequestMapping("/codeGroupXdmForm")
-	public String codeGroupXdmForm(CodeGroupVo vo,Model model) {
+	@RequestMapping("/codeXdmForm")
+	public String codeXdmForm(CodeVo vo,Model model) {
 		
 //		System.out.println("vo.getSeq(): " + vo.getSeq());
 		
-		CodeGroup codeGroup = service.selectOne(vo);
+		Code code = service.selectOne(vo);
 		
 //		System.out.println("codeGroup.getSeq():" + codeGroup.getSeq());
 		
 //		왼쪽의 list 는 jsp에서 사용할 변수명
-		model.addAttribute("item",codeGroup);
+		model.addAttribute("item",code);
 		
 //		model.addAttribute("list",service.selectList(); 위에 두줄 대신에 사용가능
 		
-		return "xdm/infra/codegroup/codeGroupXdmForm";
+		return "xdm/infra/code/codeXdmForm";
 	}
 	
 	
-	@RequestMapping("/codeGroupUpdt")
-	public String codeGroupUpdt(CodeGroup dto) {
+	@RequestMapping("/codeUpdt")
+	public String codeUpdt(Code dto) {
 		
-		System.out.println("codeGroupUpdt");
+		System.out.println("codeUpdt");
 		service.update(dto);
 		
 		
-		return "redirect:/codeGroupXdmList";
+		return "redirect:/codeXdmList";
 	}
 	
-	@RequestMapping("/codeGroupDel")
-	public String codeGroupDel(CodeGroup dto) {
+	@RequestMapping("/codeDel")
+	public String codeDel(Code dto) {
 		
-		System.out.println("codeGroupDel");
+		System.out.println("codeDel");
 		service.delete(dto);
 		
 		
-		return "redirect:/codeGroupXdmList";
+		return "redirect:/codeXdmList";
 	}
 	
 	
-	@RequestMapping("/codeGroupInsert")
-	public String codeGroupInsert(CodeGroup dto) {
+	@RequestMapping("/codeInsert")
+	public String codeInsert(Code dto) {
 		
-		System.out.println("codeGroupInsert");
+		System.out.println("codeInsert");
 		service.insert(dto);
 		
 		
-		return "redirect:/codeGroupXdmList";
+		return "redirect:/codeXdmList";
 	}
 	
-	@RequestMapping("/codeGroupUele")
-	public String codeGroupUele(CodeGroup dto) {
+	@RequestMapping("/codeUele")
+	public String codeUele(Code dto) {
 		
-		System.out.println("codeGroupUele");
+		System.out.println("codeUele");
 		service.uelete(dto);
 		
 		
-		return "redirect:/codeGroupXdmList";
+		return "redirect:/codeXdmList";
 		// 경로가 없다면 redirect:/ 추가
 		// 경로가 있다면 해당 JSP로 return
 	}

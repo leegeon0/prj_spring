@@ -317,7 +317,7 @@
               <li data-filter="*" class="filter-active">All</li>
               <li data-filter=".filter-user">User</li>
               <li data-filter=".filter-admin">Admin</li>
-              <li data-filter=".filter-web">Web</li>
+              <!-- <li data-filter=".filter-web">Web</li> -->
             </ul>
           </div>
         </div>
@@ -326,26 +326,28 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-user">
             <div class="portfolio-wrap">
-              <img src="/resources/assetss/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+              <img src="/resources/assetss/img/portfolio/portfolio-10.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>User 1</h4>
+                <h4>User 1s</h4>
                 <p>User 1</p>
                 <div class="portfolio-links">
-                  <a href="/resources/assetss/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                  <a href="/resources/assetss/img/portfolio/portfolio-10.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                  <!-- <a href="indexUserLogin" class="portfolio-details-lightbox" data-glightbox="type: external" ><i class="bx bx-link"></i></a> -->
+                  <a href="indexUserLogin">In</a>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 portfolio-item filter-admin">
             <div class="portfolio-wrap">
-              <img src="/resources/assetss/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+              <img src="/resources/assetss/img/portfolio/portfolio-12.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Admin 1</h4>
+                <h4>Admin 11</h4>
                 <p>Admin</p>
                 <div class="portfolio-links">
-                  <a href="/resources/assetss/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                  <a href="/resources/assetss/img/portfolio/portfolio-12.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
+                  <a href="loginPage">In</a>
                 </div>
               </div>
             </div>

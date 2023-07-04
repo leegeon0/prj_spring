@@ -23,21 +23,23 @@
 
 </mapper>    --> 
  
-<mapper namespace="com.program.app.infra.codegroup.CodeGroupMapper">
+<mapper namespace="com.program.app.infra.code.CodeMapper">
 
-	<resultMap type="com.program.app.infra.codegroup.CodeGroup" id="resultMapObj"></resultMap>
+	<resultMap type="com.program.app.infra.code.Code" id="resultMapObj"></resultMap>
  
  	<sql id="abc">
  		seq,
- 		nameFull,
- 		delNy
+ 		name,
+ 		age,
+ 		gender,
+ 		codegroup_seq
  	</sql>
  
  <sql id ="selectCommon">
    		FROM    
-	    	codegroup
+	    	code
 		WHERE 1=1
-			<if test="shKeyword != null and !shKeyword.equals('')">AND nameFull LIKE CONCAT('%',#{shKeyword},'%')</if>
+			<if test="shKeyword != null and !shKeyword.equals('')">AND name LIKE CONCAT('%',#{shKeyword},'%')</if>
     </sql>
 
    	<select id="selectOneCount" resultType="Integer">
@@ -77,7 +79,7 @@
  		select
  			<include refid="abc" />
  		from
- 			codegroup
+ 			code
  		where 1=1
  			and	seq = #{seq}
  			<!-- 문자 검색은 대부분 like를 사용 -->
@@ -87,9 +89,12 @@
  	
  <update id="update" >
  	update
- 		codegroup
+ 		code
  	set
- 		nameFull = #{nameFull}
+ 		name = #{name},
+ 		age = #{age},
+ 		gender = #{gender},
+ 		codegroup_seq = #{codegroup_seq}
  	where 1=1
  		and seq = #{seq}
  </update>
@@ -97,19 +102,24 @@
  <delete id="delete">
  	delete
  	from
- 		codegroup
+ 		code
  	where 1=1
  		and seq = #{seq}
  </delete>
  
  <insert id="insert">
  	insert into 
- 	codegroup(
- 		nameFull,
- 		delNy
+ 	code(
+ 		name,
+ 		age,
+ 		gender,
+ 		codegroup_seq
  		)value(
- 			#{nameFull},
-		 <choose>
+ 			#{name},
+ 			#{age},
+ 			#[gender],
+ 			#[cdegroup_seq]
+<!-- 		 <choose>
             <when test="delNy == null or delNy == '' or delNy == 0">
                 0
             </when>
@@ -119,18 +129,18 @@
             <otherwise>
                 <![CDATA[(SELECT 1/0)]]>
             </otherwise>
-        </choose>
+        </choose> -->
  			<!-- 여기에 delNy값을 설정해야함 -->
  		)
  
  </insert>
  	
- <update id="uelete">
+<!--  <update id="uelete">
 	update
- 		codegroup
+ 		code
  	set
  		delNy = #{delNy}
  	where 1=1
  		and seq = #{seq} 
- </update>
+ </update> -->
  </mapper>

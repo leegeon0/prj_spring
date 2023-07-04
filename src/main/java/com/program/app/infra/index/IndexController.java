@@ -36,6 +36,18 @@ public class IndexController {
 		return "xdm/infra/loginPage/loginPage";
 	}
 	
+	@RequestMapping(value="/indexUserLogin")
+	public String indexUserView() {
+		
+		return "user/infra/loginRegister/indexUserLogin";
+	}
+	
+	@RequestMapping(value="/indexUserRegister")
+	public String indexUserRegister() {
+		
+		return "user/infra/loginRegister/indexUserRegister";
+	}
+	
 	/*
 	 * @RequestMapping(value="/codeGroupXdmList") // value = / : 최상위 도메인 public
 	 * String codeGroupXdmList() {
