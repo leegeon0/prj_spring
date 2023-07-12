@@ -352,7 +352,7 @@
         </a>
         <ul id="tables-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
           <li>
-            <a href="codeXdmList" class="active">
+            <a href="codeXdmList" >
               <i class="bi bi-circle"></i><span>Code</span>
             </a>
           </li>
@@ -362,7 +362,7 @@
             </a>
           </li>
           <li>
-            <a href="memberXdmList" >
+            <a href="memberXdmList" class="active" >
               <i class="bi bi-circle"></i><span>MemberList</span>
             </a>
           </li>

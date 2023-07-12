@@ -361,6 +361,11 @@
               <i class="bi bi-circle"></i><span>CodeGroup</span>
             </a>
           </li>
+          <li>
+            <a href="memberXdmList">
+              <i class="bi bi-circle"></i><span>MemberList</span>
+            </a>
+          </li>
         </ul>
       </li><!-- End Tables Nav -->
 

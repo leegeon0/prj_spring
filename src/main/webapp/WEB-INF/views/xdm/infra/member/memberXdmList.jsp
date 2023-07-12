@@ -5,50 +5,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
-<!-- 
-<c:choose>
-	<c:when test="${fn:length(list) eq 0}">
-		<tr>
-			<td class="text-center" colspan="9">There is no data!</td>
-		</tr>	
-	</c:when>
-	<c:otherwise>
-		<c:forEach items="${list}" var="list" varStatus="status">
-			<c:out value="${list.seq}"></c:out>
-			<c:out value="${list.nameFull}"></c:out><br>
-		</c:forEach>
-	</c:otherwise>
-</c:choose>
- --!>
 
-<!-- <!doctype html>
-<html lang="ko">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>yep</title>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js">
-    
-</script>
-    
-  </head>
-  <body>
-    <form class="row g-3 needs-validation" novalidate>
-  <div class="col-md-4" style="width : 300px;">
-    <label for="validationCustom01" class="form-label">제목</label>
-    <input type="text" class="form-control" id="validationCustom01" value="" required>
-  </div>
-  <div class="col-md-4" style="width : 300px;">
-    <label for="validationCustom02" class="form-label">이름</label>
-    <input type="text" class="form-control" id="validationCustom02" value="" required>
-  </div>
-  <div class="col-12">
-    <button class="btn btn-primary" type="submit">저장</button>
-  </div>
-</form>
-  </body>
-</html> -->
 
 
 <!DOCTYPE html>
@@ -79,6 +36,7 @@
   <link href="/resources/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="/resources/assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
+
   <!-- Template Main CSS File -->
   <link href="/resources/assets/css/style.css" rel="stylesheet">
   
@@ -102,7 +60,7 @@
 
 <body>
 
-	<%@include file="codeGroupXdmListTop.jsp"%>
+	<%@include file="memberXdmListTop.jsp"%>
 
 
   <main id="main" class="main">
@@ -124,7 +82,7 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Datatables</h5>
+              <h5 class="card-title">Member Datatables</h5>
                <form class="sm" name="formList" method="post">
                
                	<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
@@ -154,8 +112,15 @@
 		                <tr>
 		                    <th scope="col">seq</th>
 		                    <th scope="col">id</th>
-		                    <th scope="col">nameFull</th>
+		                    <th scope="col">password</th>
+		                    <th scope="col">name</th>
+		                    <th scope="col">memberAddress</th>
+		                    <th scope="col">memberTel</th>
+		                    <th scope="col">salesType</th>
+		                    <th scope="col">companyAddress</th>
+		                    <th scope="col">companyTel</th>
 		                    <th scope="col">delNy</th>
+		                    
 		                </tr>
                 	</thead>
 	                <tbody>
@@ -169,8 +134,14 @@
 							<c:forEach items="${list}" var="list" varStatus="status">
 							<tr>
 								<td><c:out value="${list.seq}"></c:out></td>
-								<td><c:out value="${list.id}"></c:out></td>
-								<td><a href="codeGroupXdmForm?seq=<c:out value="${list.seq}"/>"><c:out value="${list.nameFull}"/></a></td>
+								<td><a href="memberXdmForm?seq=<c:out value="${list.seq}"/>"><c:out value="${list.id}"/></a></td>
+								<td><c:out value="${list.password}"></c:out><br></td>
+								<td><c:out value="${list.name}"></c:out><br></td>
+								<td><c:out value="${list.memberAddress}"></c:out><br></td>
+								<td><c:out value="${list.memberTel}"></c:out><br></td>
+								<td><c:out value="${list.salesType}"></c:out><br></td>
+								<td><c:out value="${list.companyAddress}"></c:out><br></td>
+								<td><c:out value="${list.companyTel}"></c:out><br></td>
 								<td><c:out value="${list.delNy}"></c:out><br></td>
 							</tr>
 							</c:forEach>
@@ -178,7 +149,7 @@
 						</c:choose>
 	                </tbody>
               		</table>
-              		<a href="codeGroupXdmForm"><button type="button" class="btn btn-primary" id="insertBtn">추가</button></a>
+              		<a href="memberXdmForm"><button type="button" class="btn btn-primary" id="insertBtn">추가</button></a>
               		<div class="container-fluid px-0 mt-2">
 					    <div class="row">
 					        <div class="col">
@@ -223,7 +194,7 @@
 
   </main><!-- End #main -->
 
-  <%@include file="codeGroupXdmListBottom.jsp"%>
+  <%@include file="memberXdmListBottom.jsp"%>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
@@ -242,13 +213,14 @@
   <script src="/resources/assets/js/main.js"></script>
   
   <script src="/resources/assets/js/jquery-3.6.4.min.js"></script>
+
   
   <script type="text/javascript">
   $("#btn").on("click", function(){
 		
 		/* $("form[name=formList]").attr("method","get"); */
 
-		$("form[name=formList]").attr("action", "/codeGroupXdmList").submit();
+		$("form[name=formList]").attr("action", "/memberXdmList").submit();
 		$("form[name=formList]").attr("method","post");
 		
 		
@@ -256,7 +228,7 @@
   
   goList = function(thisPage) {
 		$("input:hidden[name=thisPage]").val(thisPage);
-		$("form[name=formList]").attr("action", "/codeGroupXdmList").submit();
+		$("form[name=formList]").attr("action", "/memberXdmList").submit();
 	}
   </script>
 

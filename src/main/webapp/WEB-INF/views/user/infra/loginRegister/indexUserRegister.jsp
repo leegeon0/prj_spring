@@ -38,11 +38,7 @@
     <!-- Pills navs -->
     <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
         <li class="nav-item" role="presentation">
-            <a class="nav-link active" id="tab-login" data-mdb-toggle="pill" href="#pills-login" role="tab"
-                aria-controls="pills-login" aria-selected="true">Login</a>
-        </li>
-        <li class="nav-item" role="presentation">
-            <a class="nav-link" id="tab-register" data-mdb-toggle="pill" href="#pills-register" role="tab"
+            <a class="nav-link active" id="tab-register" data-mdb-toggle="pill" href="#pills-register" role="tab"
                 aria-controls="pills-register" aria-selected="false">Register</a>
         </li>
     </ul>
@@ -50,68 +46,8 @@
 
     <!-- Pills content -->
     <div class="tab-content">
-        <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-            <form>
-                <div class="text-center mb-3">
-                    <p>Sign in with:</p>
-                    <button type="button" class="btn btn-link btn-floating mx-1">
-                        <i class="fab fa-facebook-f"></i>
-                    </button>
-
-                    <button type="button" class="btn btn-link btn-floating mx-1">
-                        <i class="fab fa-google"></i>
-                    </button>
-
-                    <button type="button" class="btn btn-link btn-floating mx-1">
-                        <i class="fab fa-twitter"></i>
-                    </button>
-
-                    <button type="button" class="btn btn-link btn-floating mx-1">
-                        <i class="fab fa-github"></i>
-                    </button>
-                </div>
-
-                <p class="text-center">or:</p>
-
-                <!-- Email input -->
-                <div class="form-outline mb-4">
-                    <input type="email" id="loginName" class="form-control" />
-                    <label class="form-label" for="loginName">Email or user ID</label>
-                </div>
-
-                <!-- Password input -->
-                <div class="form-outline mb-4">
-                    <input type="password" id="loginPassword" class="form-control" />
-                    <label class="form-label" for="loginPassword">Password</label>
-                </div>
-
-                <!-- 2 column grid layout -->
-                <div class="row mb-4">
-                    <div class="col-md-6 d-flex justify-content-center">
-                        <!-- Checkbox -->
-                        <div class="form-check mb-3 mb-md-0">
-                            <input class="form-check-input" type="checkbox" value="" id="loginCheck" checked />
-                            <label class="form-check-label" for="loginCheck"> Remember me </label>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 d-flex justify-content-center">
-                        <!-- Simple link -->
-                        <a href="#!">Forgot password?</a>
-                    </div>
-                </div>
-
-                <!-- Submit button -->
-                <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
-
-                <!-- Register buttons -->
-                <div class="text-center">
-                    <p>Not a member? <a href="#!">Register</a></p>
-                </div>
-            </form>
-        </div>
-        <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
-            <form>
+        <div class="tab-pane fade show active" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
+            <form name="form">
                 <div class="text-center mb-3">
                     <p>Sign up with:</p>
                     <button type="button" class="btn btn-link btn-floating mx-1">
@@ -131,54 +67,108 @@
                     </button>
                 </div>
 
-                <p class="text-center">or:</p>
 
-                <!-- Name input -->
+                <!-- id input -->
                 <div class="form-outline mb-4">
-                    <input type="text" id="registerName" class="form-control" />
-                    <label class="form-label" for="registerName">Name</label>
+                    <input type="text" id="id" name="id" class="form-control" />
+                    <label class="form-label" for="id">아이디</label>
                 </div>
 
-                <!-- Username input -->
+                <!-- password input -->
                 <div class="form-outline mb-4">
-                    <input type="text" id="registerUsername" class="form-control" />
-                    <label class="form-label" for="registerUsername">Username</label>
+                    <input type="password" id="password" name="password" class="form-control"/>
+                    <label class="form-label" for="password">비밀번호</label>
                 </div>
 
-                <!-- Email input -->
+                <!-- repeatPassord input -->
                 <div class="form-outline mb-4">
-                    <input type="email" id="registerEmail" class="form-control" />
-                    <label class="form-label" for="registerEmail">Email</label>
+                    <input type="password" id="repeatPassword" name="repeatPassword" class="form-control" />
+                    <label class="form-label" for="repeatPassword">비밀번호 확인</label>
+                </div>
+                <!-- name input -->
+                <div class="form-outline mb-4">
+                    <input type="text" id="name" name="name" class="form-control" />
+                    <label class="form-label" for="name">성명</label>
                 </div>
 
-                <!-- Password input -->
+                <!-- memberAddress input -->
                 <div class="form-outline mb-4">
-                    <input type="password" id="registerPassword" class="form-control" />
-                    <label class="form-label" for="registerPassword">Password</label>
+                    <input type="text" id="memberAddress" name="memberAddress" class="form-control" />
+                    <label class="form-label" for="memberAddress">회원 주소</label>
                 </div>
 
-                <!-- Repeat Password input -->
+                <!-- memberTel input -->
                 <div class="form-outline mb-4">
-                    <input type="password" id="registerRepeatPassword" class="form-control" />
-                    <label class="form-label" for="registerRepeatPassword">Repeat password</label>
+                    <input type="text" id="memberTel" name="memberTel" class="form-control" />
+                    <label class="form-label" for="memberTel">회원 전화번호</label>
+                </div>
+                
+                <!-- salesType input -->
+                <div class="form-outline mb-4">
+                    <input type="text" id="salesType" name="salesType" class="form-control" />
+                    <label class="form-label" for="salesType">판매유형</label>
+                </div>
+                <!-- companyAddress input -->
+                <div class="form-outline mb-4">
+                    <input type="text" id="companyAddress" name="companyAddress" class="form-control" />
+                    <label class="form-label" for="companyAddress">회사 주소</label>
+                </div>
+                <!-- companyTel input -->
+                <div class="form-outline mb-4">
+                    <input type="text" id="companyTel" name="companyTel" class="form-control" />
+                    <label class="form-label" for="companyTel">회사 전화번호</label>
                 </div>
 
                 <!-- Checkbox -->
                 <div class="form-check d-flex justify-content-center mb-4">
-                    <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" checked
+                    <input class="form-check-input me-2" type="checkbox" value="" id="check" name="check" checked
                         aria-describedby="registerCheckHelpText" />
-                    <label class="form-check-label" for="registerCheck">
-                        I have read and agree to the terms
+                    <label class="form-check-label" for="Check">
+                        해당 상호 약관을 읽었으며 이에 동의합니다.
                     </label>
                 </div>
 
                 <!-- Submit button -->
-                <button type="submit" class="btn btn-primary btn-block mb-3">Sign in</button>
+               <a href="indexUserLogin"><button type="submit" id="signUpBtn" class="btn btn-primary btn-block mb-3 btn-goback">Sign up</button></a>
             </form>
         </div>
     </div>
     <!-- Pills content -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
+    
+    <script type="text/javascript">
+    
+/*     validationInst = function(){
+    	
+    	if(validationUpdt == false) return false;
+    }
+    
+    validationUpdt = function(){
+    	
+    	//  실제 체킹하는 소스가 들어가는 부분
+    	
+    	
+    	
+    	
+    } */
+    
+  $("#signUpBtn").on("click", function(){
+		
+		/* $("form[name=formList]").attr("method","get"); */
+
+		if($.trim($("#name").val()) == "" || $.trim($("#name").val()) == null){
+			alert("이름을 입력해주세요.");
+			$("#name").focus();
+		}else{
+			$("form[name=form]").attr("action","/memberInsert").submit();	
+		}
+		
+		/* $("form[name=formList]").attr("method","post"); */
+		
+		
+	});
+    
+    </script>
 </body>
 
 </html>

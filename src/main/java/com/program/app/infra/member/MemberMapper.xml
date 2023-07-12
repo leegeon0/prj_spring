@@ -23,22 +23,32 @@
 
 </mapper>    --> 
  
-<mapper namespace="com.program.app.infra.codegroup.CodeGroupMapper">
+<mapper namespace="com.program.app.infra.member.MemberMapper">
 
-	<resultMap type="com.program.app.infra.codegroup.CodeGroup" id="resultMapObj"></resultMap>
+	<resultMap type="com.program.app.infra.member.Member" id="resultMapObj"></resultMap>
  
  	<sql id="abc">
  		seq,
  		id,
- 		nameFull,
+ 		password,
+ 		name,
+ 		memberAddress,
+ 		memberTel,
+ 		salesType,
+ 		companyAddress,
+ 		companyTel,
  		delNy
  	</sql>
- 
- <sql id ="selectCommon">
+ 	<sql id ="selectCommon">
    		FROM    
-	    	codegroup
+	    	posAccount
 		WHERE 1=1
-			<if test="shKeyword != null and !shKeyword.equals('')">AND nameFull LIKE CONCAT('%',#{shKeyword},'%')</if>
+		and delNy = 1
+			<if test="shKeyword != null and !shKeyword.equals('')">
+        		AND (id LIKE CONCAT('%',#{shKeyword},'%') OR name LIKE CONCAT('%',#{shKeyword},'%'))
+    		</if>
+			<!-- <if test="shKeyword != null and !shKeyword.equals('')">AND id LIKE CONCAT('%',#{shKeyword},'%')</if> -->
+			
     </sql>
 
    	<select id="selectOneCount" resultType="Integer">
@@ -74,11 +84,11 @@
  	
  	</select> -->
  	
- 		<select id="selectOne" resultMap="resultMapObj">
+ 	<select id="selectOne" resultMap="resultMapObj">
  		select
  			<include refid="abc" />
  		from
- 			codegroup
+ 			posAccount
  		where 1=1
  			and	seq = #{seq}
  			<!-- 문자 검색은 대부분 like를 사용 -->
@@ -86,12 +96,35 @@
  	
  	</select>
  	
+ 	 <select id="selectTwo" resultMap="resultMapObj">
+ 		select
+ 			<include refid="abc" />
+ 		from
+ 			posAccount
+ 		where 1=1
+ 			and	id = #{id}
+ 			and password = #{password}
+ 			<!-- 문자 검색은 대부분 like를 사용 -->
+ 	
+ 	</select>
+ 	
+
+ 	
+ 	
+ 	
  <update id="update" >
  	update
- 		codegroup
+ 		posAccount
  	set
  		id = #{id},
- 		nameFull = #{nameFull}
+ 		password = #{password},
+ 		name = #{name},
+ 		memberAddress = #{memberAddress},
+ 		memberTel = #{memberTel},
+ 		salesType = #{salesType},
+ 		companyAddress = #{companyAddress},
+ 		companyTel = #{companyTel},
+ 		delNy = #{delNy}
  	where 1=1
  		and seq = #{seq}
  </update>
@@ -99,23 +132,35 @@
  <delete id="delete">
  	delete
  	from
- 		codegroup
+ 		posAccount
  	where 1=1
  		and seq = #{seq}
  </delete>
  
  <insert id="insert">
- 	insert into 
- 	codegroup(
+ 	insert into posAccount
+ 	(
  		id,
- 		nameFull,
+ 		password,
+ 		name,
+ 		memberAddress,
+ 		memberTel,
+ 		salesType,
+ 		companyAddress,
+ 		companyTel,
  		delNy
  		)value(
  			#{id},
- 			#{nameFull},
+ 			#{password},
+ 			#{name},
+ 			#{memberAddress},
+ 			#{memberTel},
+ 			#{salesType},
+ 			#{companyAddress},
+ 			#{companyTel},
 		 <choose>
             <when test="delNy == null or delNy == '' or delNy == 0">
-                0
+                1
             </when>
             <when test="delNy == '1' or delNy == 1 ">
                 1
@@ -131,7 +176,7 @@
  	
  <update id="uelete">
 	update
- 		codegroup
+ 		posAccount
  	set
  		delNy = #{delNy}
  	where 1=1

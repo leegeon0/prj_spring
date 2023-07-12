@@ -37,7 +37,7 @@ public class IndexController {
 	}
 	
 	@RequestMapping(value="/indexUserLogin")
-	public String indexUserView() {
+	public String indexUserLogin() {
 		
 		return "user/infra/loginRegister/indexUserLogin";
 	}
@@ -46,6 +46,18 @@ public class IndexController {
 	public String indexUserRegister() {
 		
 		return "user/infra/loginRegister/indexUserRegister";
+	}
+	
+	@RequestMapping(value="/indexUserView")
+	public String indexUserView() {
+		
+		return "user/infra/index/indexUserView";
+	}
+	
+	@RequestMapping(value="/indexUserTable")
+	public String indexUserTable() {
+		
+		return "user/infra/table/indexUserTable";
 	}
 	
 	/*

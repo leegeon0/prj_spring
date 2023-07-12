@@ -62,6 +62,12 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
+                <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" rel="stylesheet" />
   <!-- Favicons -->
   <link href="/resources/assets/img/favicon.png" rel="icon">
   <link href="/resources/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -79,13 +85,29 @@
   <link href="/resources/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="/resources/assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
+
   <!-- Template Main CSS File -->
   <link href="/resources/assets/css/style.css" rel="stylesheet">
   
   <style type="text/css">
   
-  .sm{
-  	dispaly : flex;
+  
+  .edit_pos{
+  	display : flex;
+  	justify-content: space-around;
+  }
+  
+  .form_line_left{
+  	width : 45%
+
+  }
+  .form_line_right{
+	width : 45%
+  }
+  
+
+  .btn_btn{
+  	clear: both;
   }
   
   </style>
@@ -102,7 +124,7 @@
 
 <body>
 
-<%@include file="codeGroupXdmListTop.jsp"%>
+<%@include file="memberXdmListTop.jsp"%>
 
   <main id="main" class="main">
 
@@ -125,27 +147,60 @@
             <div class="card-body">
               <h5 class="card-title">Datatables Edit</h5>
                <form class="submitForm" name="form" method="post">
-				   <table class="table">
-                	<thead>
-		                <tr>
-		                    <th scope="col">seq</th>
-		                    <th scope="col">id</th>
-		                    <th scope="col">nameFull</th>
-		                    <th scope="col">delNy</th>
-		                </tr>
-                	</thead>
-	                <tbody>
-	                <tr>
-		                <td><input type="text" class="form-control" id="seq" name="seq" placeholder="Auto Increment" required readonly value="<c:out value="${item.seq}"/>"></td>
-		                <td><input type="text" class="form-control" id="id" name="id" required value="<c:out value="${item.id}"/>"></td>
-		                <td><input type="text" class="form-control" id="nameFull" name="nameFull" required value="<c:out value="${item.nameFull}"/>"></td>
-		                <td><input type="text" class="form-control" id="delNy" name="delNy" placeholder="Default : 0" required value="<c:out value="${item.delNy}"/>"></td>	
-					</tr>
-	                </tbody>
-              		</table>
+              		<div class="edit_pos">
+              			<div class="form_line_left">
+              			<div class="form-outline mb-4">
+                    		<input type="text" class="form-control" id="seq" placeholder="Auto Increment" readonly name="seq" required value="<c:out value="${item.seq}"/>">
+                    		<label class="form-label" for="seq">seq</label>
+                		</div>
+              			<div class="form-outline mb-4">
+                    		<input type="text" class="form-control" id="id" name="id" required value="<c:out value="${item.id}"/>">
+                    		<label class="form-label" for="id">아이디</label>
+                		</div>
+                       	<div class="form-outline mb-4">
+                    		<input type="text" class="form-control" id="password" name="password"  required value="<c:out value="${item.password}"/>">
+                    		<label class="form-label" for="id">비밀번호</label>
+                		</div>
+                		<div class="form-outline mb-4">
+                    		<input type="text" class="form-control" id="name" name="name"  required value="<c:out value="${item.name}"/>">
+                    		<label class="form-label" for="id">이름</label>
+                		</div>
+                		<div class="form-outline mb-4">
+                			<input type="text" class="form-control" id="salesType" name="salesTypes" required value="<c:out value="${item.salesType}"/>">
+                			<label class="form-label" for="salesType">판매유형</label>
+                		</div>
+                		<div class="form-outline mb-4">
+                			<input type="text" class="form-control" placeholder="default : 0" id="delNy" name="delNy" required value="<c:out value="${item.delNy}"/>">
+                			<label class="form-label" for="delNy">사용여부</label>
+                		</div>
+              		</div>
+              		<div class="form_line_right">
+              			<div class="form-outline mb-4">
+                			<input type="text" class="form-control" id="memberAddress" name="memberAddress" required value="<c:out value="${item.memberAddress}"/>">
+                			<label class="form-label" for="memberAddress">회원 주소</label>
+                		</div>
+                		<div class="form-outline mb-4">
+                			<input type="text" class="form-control" id="memberTel" name="memberTel" required value="<c:out value="${item.memberTel}"/>">
+                			<label class="form-label" for="memberTel">회원 전화번호</label>
+                		</div>
+                		<div class="form-outline mb-4">
+                			<input type="text" class="form-control" id="companyAddress" name="companyAddress" required value="<c:out value="${item.companyAddress}"/>">
+                			<label class="form-label" for="companyAddress">회사 주소</label>
+                		</div>
+                		<div class="form-outline mb-4">
+                			<input type="text" class="form-control" id="companyTel" name="companyTel" required value="<c:out value="${item.companyTel}"/>">
+                			<label class="form-label" for="companyTel">회사 전화번호</label>
+                		</div>
+              		
+              		</div>
+              		
+              	</div>
+              		
+              		
+              	
 
 
-              		<c:choose>
+					<c:choose>
 						<c:when test="${empty item.seq }">
 							<button type="button" class="btn btn-primary" id="submitBtn">저장</button>
 						</c:when>
@@ -155,6 +210,8 @@
 							<button type="button" class="btn btn-primary" id="deleteBtn">삭제</button>
 						</c:otherwise>	
 					</c:choose>
+
+              		
 
 				<!-- 	 
 					<button type="button" class="btn btn-primary" id="submitBtn">저장</button>
@@ -180,7 +237,7 @@
 
   </main><!-- End #main -->
 
-<%@include file="codeGroupXdmListBottom.jsp"%>
+<%@include file="memberXdmListBottom.jsp"%>
 
   <!-- Vendor JS Files -->
   <script src="/resources/assets/vendor/apexcharts/apexcharts.min.js"></script>
@@ -197,92 +254,36 @@
   <script src="/resources/assets/js/main.js"></script>
   
   <script src="/resources/assets/js/jquery-3.6.4.min.js"></script>
-  <script src="/resources/assets/js/validation.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
   
   <script type="text/javascript">
-  
-  	var objName = $("#nameFull");
-  
-    validationInst = function(){
-	
-	if(validationUpdt() == false) return false;
-	
-	}
-
- 	validationUpdt = function(){
-		
-		//  실제 체킹하는 소스가 들어가는 부분
-		if(check(objName) == false) return false;
-/* 		
-		if($.trim($("#nameFull").val()) == "" || $.trim($("#nameFull").val()) == null){
-			alert("이름을 입력해주세요.");
-			$("#nameFull").focus();
-			return false;
-		}else{
-			return true;	
-		}
-		 */
-		/* 		
-		myRe = /^[a-z0-9_-]{2,10}$/;
-		
-		if(myRe.test($.trim($("#nameFull").val()) == false){
-			alert("공백없는 숫자와 대소문자만 입력 가능합니다.");
-			$("#nameFull").focus();
-			return false;
-			
-		}else{
-		// by pass
-		} 
-		*/
-		
-	}  
- 	
- 	
- 	
-  $("#submitBtn").on("click",function(){
-	  	if(validationInst() == false) return false; 
-	   	// 함수는 ()이게 있어야 함!!!
-
-		var delNyValue = $("#delNy").val();
+  	$("#submitBtn").on("click",function(){
+	 	
+/* 	    var delNyValue = $("#delNy").val();
 	    
 	    if (delNyValue !== "0" && delNyValue !== "1" && delNyValue !== "") {
 	    	event.preventDefault()
 	      alert("delNy는 0과 1만 입력할 수 있습니다.");
 	    	return false;
-	    }else{ 
-	   // 	alert("저장완료");	
-	    } 
-	    
-	    
- 	    
-	 	$("form[name=form]").attr("action","/codeGroupInsert").submit();
+	    }else{
+	    	alert("저장완료");	
+	    }  */
+	 	$("form[name=form]").attr("action","/memberXdmInsert").submit();
 	 	 
-	  });
+	});
   
   
 	  $("#updateBtn").on("click",function(){
 	 	
- 		 if(validationUpdt() == false) return false;	 	 
-		 $("form[name=form]").attr("action","/codeGroupUpdt").submit();
-		 /* 
-		 	if($.trim($("#nameFull").val()) == "" || $.trim($("#nameFull").val()) == null){
-				alert("이름을 입력해주세요.");
-				$("#nameFull").focus();
-				return false;
-			}else{
-				$("form[name=form]").attr("action","/codeGroupUpdt").submit();
-			} 
-		 */
+	 	
+	 	$("form[name=form]").attr("action","/memberUpdt").submit();
+	 	 
 	  });
-	  
-	  
-	  
-	  
 	  
 	  $("#deleteBtn").on("click",function(){
 	 		
 	 		
-	 		$("form[name=form]").attr("action","/codeGroupDel").submit();
+	 		$("form[name=form]").attr("action","/memberDel").submit();
 
 	 		 
 	 });
@@ -290,7 +291,7 @@
 	  $("#ueleteBtn").on("click",function(){
 	 		
 	 		
-	 		$("form[name=form]").attr("action","/codeGroupUele").submit();
+	 		$("form[name=form]").attr("action","/memberUele").submit();
 	 		 
 	 });
 	  
@@ -302,6 +303,3 @@
 </body>
 
 </html>
-
-
-

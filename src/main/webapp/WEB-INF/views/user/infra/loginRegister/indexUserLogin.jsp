@@ -50,24 +50,63 @@
                 <div class="pos_img">
                     <img src="/resources/assets/img/pree_pos.png" alt="">
                 </div>
-                <form action="index2.html" name="register" id="login" class="row g-3" method="post">
+                <form name="register" id="login" class="row g-3" method="post">
                     <div class="col-md-4">
                         <label for="id" class="form-label"><i class="fa-sharp fa-solid fa-circle-user"></i></label>
-                        <input type="text" class="form-control" id="id" value="" name="id" required>
+                        <input type="text" class="form-control" id="id" value="" name="id">
                     </div>
                     <div class="col-md-4">
                         <label for="password" class="form-label"><i class="fa-sharp fa-solid fa-key"></i></label>
-                        <input type="password" class="form-control" id="password" value="" name="password" required>
+                        <input type="password" class="form-control" id="password" value="" name="password">
                     </div>
                     <div class="col-12">
-                        <button class="btn btn-primary sign_in_btn" type="submit">로그인</button>
-                        <a href="indexUserRegister"><button id ="sign_up" class="btn btn-primary sign_up_btn" type="button">회원가입</button></a> 
+                       <button class="btn btn-primary sign_in_btn" id="sign_in" type="button">로그인</button>
+                        <button id ="sign_up" class="btn btn-primary sign_up_btn" type="button">회원가입</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+    <script type="text/javascript">
     
+    $("#sign_in").on("click", function(){
+    	
+    	/* if(validation() == false) return false; */
+    	
+    	$.ajax({
+    		async: true 
+    		,cache: false
+    		,type: "post"
+    		/* ,dataType:"json" */
+    		,url: "/login"
+    		/* ,data : $("#formLogin").serialize() */
+    		,data : { "id" : $("#id").val(),
+    			"password" : $("#password").val()}
+    		,success: function(response) {
+    			if(response.rt == "success") {
+    				alert(response.rtMember.name);
+    				location.href = "/indexUserView?=";
+    			} else {
+    				alert("그런 회원 없습니다.");
+    			}
+    		}
+    		,error : function(jqXHR, textStatus, errorThrown){
+    			alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+    		}
+    	});
+
+// 		$("form[name=register]").attr("action", "/memberXdmList").submit();
+// 		$("form[name=register]").attr("method","post");
+    });
+
+/* 
+    validation = function() {
+    	// if(!checkNull($("#ifmmId"), $.trim($("#ifmmId").val()), "아이디를 입력해 주세요!")) return false;
+    	// if(!checkNull($("#ifmmPassword"), $.trim($("#ifmmPassword").val()), "비밀번호를 입력해 주세요!")) return false;
+    }
+     */
+    
+    </script>
 </body>
 
 </html>

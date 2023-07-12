@@ -7,6 +7,7 @@ package com.program.app.infra.codegroup;
 public class CodeGroup {
 
 	private String seq;
+	private String id;
 	private String nameFull;
 	private Integer delNy;
 //	-----
@@ -27,6 +28,12 @@ public class CodeGroup {
 	}
 	public void setDelNy(Integer delNy) {
 		this.delNy = delNy;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
 	}
 
 

@@ -1,8 +1,8 @@
 $(function(){
 
-
+/*
   $(document).ready(function() {
-    $("#login").submit(function(event) {
+    $("#sign_in").on("click",function(event) {
       event.preventDefault(); // 폼 제출 동작을 막음
   
       var id = $("#id").val(); // 아이디 입력란의 값을 가져옴
@@ -11,13 +11,13 @@ $(function(){
       // 예를 들면, 아이디와 비밀번호를 검증하는 코드 등이 올 수 있습니다.
   
       // 이후에 index2.html로 이동합니다.
-      window.location.href = "index2.html?id=" + id;
+      window.location.href = "indexUserView?=" + id;
   
   
     });
     
   });
-  
+*/
   
   
   
@@ -98,7 +98,7 @@ $('.preferences_btn').click(function(){
 // 판매관리 탭 선택시 이동
 $(document).ready(function() {
   $('.main_page_menu_btn').click(function() {
-    window.location.href = "index3.html";
+    window.location.href = "indexUserTable";
   });
 });
 

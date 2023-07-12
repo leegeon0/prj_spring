@@ -394,13 +394,18 @@
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="tables-general.html">
-              <i class="bi bi-circle"></i><span>General Tables</span>
+            <a href="codeXdmList">
+              <i class="bi bi-circle"></i><span>Code</span>
             </a>
           </li>
           <li>
             <a href="codeGroupXdmList">
-              <i class="bi bi-circle"></i><span>Data Tables</span>
+              <i class="bi bi-circle"></i><span>CodeGroup</span>
+            </a>
+          </li>
+          <li>
+            <a href="memberXdmList">
+              <i class="bi bi-circle"></i><span>MemberList</span>
             </a>
           </li>
         </ul>
