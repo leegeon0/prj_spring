@@ -108,6 +108,16 @@
  	
  	</select>
  	
+ 	<select id="selectOneCheckId" resultType="Integer">
+ 		select
+ 			count(name)
+ 		from
+ 			posAccount
+ 		where 1=1
+ 			and name = #{name}
+ 	</select>
+ 	
+ 			
 
  	
  	

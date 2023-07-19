@@ -80,7 +80,7 @@
   <link href="/resources/assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="/resources/assets/css/style.css" rel="stylesheet">
+  <link href="/resources/assets/css/niceAdmin.css" rel="stylesheet">
   
   <style type="text/css">
   
@@ -129,17 +129,13 @@
                 	<thead>
 		                <tr>
 		                    <th scope="col">seq</th>
-		                    <th scope="col">id</th>
 		                    <th scope="col">nameFull</th>
-		                    <th scope="col">delNy</th>
 		                </tr>
                 	</thead>
 	                <tbody>
 	                <tr>
 		                <td><input type="text" class="form-control" id="seq" name="seq" placeholder="Auto Increment" required readonly value="<c:out value="${item.seq}"/>"></td>
-		                <td><input type="text" class="form-control" id="id" name="id" required value="<c:out value="${item.id}"/>"></td>
 		                <td><input type="text" class="form-control" id="nameFull" name="nameFull" required value="<c:out value="${item.nameFull}"/>"></td>
-		                <td><input type="text" class="form-control" id="delNy" name="delNy" placeholder="Default : 0" required value="<c:out value="${item.delNy}"/>"></td>	
 					</tr>
 	                </tbody>
               		</table>
@@ -194,7 +190,7 @@
    
 
   <!-- Template Main JS File -->
-  <script src="/resources/assets/js/main.js"></script>
+  <script src="/resources/assets/js/niceAdmin.js"></script>
   
   <script src="/resources/assets/js/jquery-3.6.4.min.js"></script>
   <script src="/resources/assets/js/validation.js"></script>

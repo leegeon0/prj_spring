@@ -5,6 +5,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
+<jsp:useBean id="CodeServiceImpl" class="com.program.app.infra.code.CodeServiceImpl"/>
+
 
 
 
@@ -37,7 +39,7 @@
   <link href="/resources/assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="/resources/assets/css/style.css" rel="stylesheet">
+  <link href="/resources/assets/css/niceAdmin.css" rel="stylesheet">
   
   <style type="text/css">
   
@@ -91,11 +93,17 @@
                 <input type="text" name="shKeyword"  value="<c:out value="${vo.shKeyword}"/>">
 	
 				<button type="button" class="btn btn-primary" id="btn">검색</button>
+
+                	<c:set var="listCodeGender" value="${CodeServiceImpl.selectListCachedCode('1')}"/>
 					
+					<c:forEach items="${listCodeGender}" var="list" varStatus="status">
+						<c:out value="${list.name}"/>
+					</c:forEach>
 					
 				   <table class="table">
 				   
                 	<thead>
+
                 	<!-- 
                 	 	<select name="shOption" style="margin-right : 10px;">
 							<option value="">-선택-</option>
@@ -111,8 +119,6 @@
 		                <tr>
 		                    <th scope="col">seq</th>
 		                    <th scope="col">name</th>
-		                    <th scope="col">age</th>
-		                    <th scope="col">gender</th>
 		                    <th scope="col">codegroup_seq</th>
 		                </tr>
                 	</thead>
@@ -128,8 +134,6 @@
 							<tr>
 								<td><c:out value="${list.seq}"></c:out></td>
 								<td><a href="codeXdmForm?seq=<c:out value="${list.seq}"/>"><c:out value="${list.name}"/></a></td>
-								<td><c:out value="${list.age}"></c:out><br></td>
-								<td><c:out value="${list.gender}"></c:out><br></td>
 								<td><c:out value="${list.codegroup_seq}"></c:out><br></td>
 							</tr>
 							</c:forEach>
@@ -198,7 +202,7 @@
    
 
   <!-- Template Main JS File -->
-  <script src="/resources/assets/js/main.js"></script>
+  <script src="/resources/assets/js/niceAdmin.js"></script>
   
   <script src="/resources/assets/js/jquery-3.6.4.min.js"></script>
   

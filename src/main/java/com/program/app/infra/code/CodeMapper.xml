@@ -30,8 +30,6 @@
  	<sql id="abc">
  		seq,
  		name,
- 		age,
- 		gender,
  		codegroup_seq
  	</sql>
  
@@ -92,8 +90,6 @@
  		code
  	set
  		name = #{name},
- 		age = #{age},
- 		gender = #{gender},
  		codegroup_seq = #{codegroup_seq}
  	where 1=1
  		and seq = #{seq}
@@ -111,13 +107,11 @@
  	insert into 
  	code(
  		name,
- 		age,
- 		gender,
+ 		delNy,
  		codegroup_seq
  		)value(
  			#{name},
- 			#{age},
- 			#[gender],
+ 			#{delNy},
  			#[cdegroup_seq]
 <!-- 		 <choose>
             <when test="delNy == null or delNy == '' or delNy == 0">
@@ -135,12 +129,29 @@
  
  </insert>
  	
-<!--  <update id="uelete">
+ <update id="uelete">
 	update
  		code
  	set
  		delNy = #{delNy}
  	where 1=1
  		and seq = #{seq} 
- </update> -->
+ </update> 
+ 
+
+
+  <select id="selectListCodeArrayList" resultMap="resultMapObj">
+  
+  	select
+  		seq,
+  		name,
+  		codegroup_seq
+  	from
+  		code
+  	where 1=1
+  	and delNy = 1
+  
+  </select>
+
+
  </mapper>

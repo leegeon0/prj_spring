@@ -37,6 +37,13 @@ public class MemberServiceImpl implements MemberService{
 		// TODO Auto-generated method stub
 		return dao.selectTwo(vo);
 	}
+	
+	@Override
+	public int selectOneCheckId(MemberVo vo) {
+		// TODO Auto-generated method stub
+		return dao.selecOneCheckId(vo);
+	}
+
 	@Override
 	public int update(Member dto) {
 		// TODO Auto-generated method stub
@@ -60,6 +67,7 @@ public class MemberServiceImpl implements MemberService{
 		// TODO Auto-generated method stub
 		return dao.uelete(dto);
 	}
+
 
 
 

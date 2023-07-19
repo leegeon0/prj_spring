@@ -4,6 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
+<jsp:useBean id="CodeServiceImpl" class="com.program.app.infra.code.CodeServiceImpl"/>
 
 <!-- 
 <c:choose>
@@ -80,7 +81,7 @@
   <link href="/resources/assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="/resources/assets/css/style.css" rel="stylesheet">
+  <link href="/resources/assets/css/niceAdmin.css" rel="stylesheet">
   
   <style type="text/css">
   
@@ -130,8 +131,6 @@
 		                <tr>
 		                    <th scope="col">seq</th>
 		                    <th scope="col">name</th>
-		                    <th scope="col">age</th>
-		                    <th scope="col">gender</th>
 		                    <th scope="col">codegroup_seq</th>
 		                </tr>
                 	</thead>
@@ -139,8 +138,6 @@
 	                <tr>
 		                <td><input type="text" class="form-control" id="seq" name="seq" placeholder="Auto Increment" required readonly value="<c:out value="${item.seq}"/>"></td>
 		                <td><input type="text" class="form-control" id="name" name="name" required value="<c:out value="${item.name}"/>"></td>
-		                <td><input type="text" class="form-control" id="age" name="age" placeholder="Default : 0" required value="<c:out value="${item.age}"/>"></td>
-		                <td><input type="text" class="form-control" id="gender" name="gender" required value="<c:out value="${item.gender}"/>"></td>
 		                <td><input type="text" class="form-control" id="codegroup_seq" name="codegroup_seq" required value="<c:out value="${item.codegroup_seq}"/>"></td>
 					</tr>
 	                </tbody>
@@ -196,7 +193,7 @@
    
 
   <!-- Template Main JS File -->
-  <script src="/resources/assets/js/main.js"></script>
+  <script src="/resources/assets/js/niceAdmin.js"></script>
   
   <script src="/resources/assets/js/jquery-3.6.4.min.js"></script>
   

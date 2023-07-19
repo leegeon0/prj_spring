@@ -60,6 +60,13 @@ public class IndexController {
 		return "user/infra/table/indexUserTable";
 	}
 	
+	@RequestMapping(value="/point")
+	public String point() {
+		
+		return "user/infra/kioskPayment/point";
+	}
+	
+	
 	/*
 	 * @RequestMapping(value="/codeGroupXdmList") // value = / : 최상위 도메인 public
 	 * String codeGroupXdmList() {

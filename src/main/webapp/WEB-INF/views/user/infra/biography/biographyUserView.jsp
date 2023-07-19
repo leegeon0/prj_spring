@@ -11,22 +11,22 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="/resources/assetss/img/favicon.png" rel="icon">
-  <link href="/resources/assetss/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="/resources/assets/img/favicon.png" rel="icon">
+  <link href="/resources/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="/resources/assetss/vendor/aos/aos.css" rel="stylesheet">
-  <link href="/resources/assetss/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/resources/assetss/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="/resources/assetss/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="/resources/assetss/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="/resources/assetss/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="/resources/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/resources/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/resources/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/resources/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/resources/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/resources/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="/resources/assetss/css/style.css" rel="stylesheet">
+  <link href="/resources/assets/css/myResume.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: MyResume
@@ -86,7 +86,7 @@
 
         <div class="row">
           <div class="col-lg-4">
-            <img src="/resources/assetss/img/profile-img.jpg" class="img-fluid" alt="">
+            <img src="/resources/assets/img/profile-img.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content">
             <h3>UI/UX Designer &amp; Web Developer.</h3>
@@ -326,12 +326,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-user">
             <div class="portfolio-wrap">
-              <img src="/resources/assetss/img/portfolio/portfolio-10.jpg" class="img-fluid" alt="">
+              <img src="/resources/assets/img/portfolio/portfolio-10.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>User 1s</h4>
                 <p>User 1</p>
                 <div class="portfolio-links">
-                  <a href="/resources/assetss/img/portfolio/portfolio-10.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                  <a href="/resources/assets/img/portfolio/portfolio-10.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
                   <!-- <a href="indexUserLogin" class="portfolio-details-lightbox" data-glightbox="type: external" ><i class="bx bx-link"></i></a> -->
                   <a href="indexUserLogin">In</a>
                 </div>
@@ -340,12 +340,12 @@
           </div>
           <div class="col-lg-4 col-md-6 portfolio-item filter-admin">
             <div class="portfolio-wrap">
-              <img src="/resources/assetss/img/portfolio/portfolio-12.jpg" class="img-fluid" alt="">
+              <img src="/resources/assets/img/portfolio/portfolio-12.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Admin 11</h4>
                 <p>Admin</p>
                 <div class="portfolio-links">
-                  <a href="/resources/assetss/img/portfolio/portfolio-12.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                  <a href="/resources/assets/img/portfolio/portfolio-12.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
                   <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
                   <a href="loginPage">In</a>
                 </div>
@@ -466,7 +466,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/resources/assetss/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <img src="/resources/assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
                 <h3>Saul Goodman</h3>
                 <h4>Ceo &amp; Founder</h4>
                 <p>
@@ -479,7 +479,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/resources/assetss/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <img src="/resources/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
                 <h3>Sara Wilsson</h3>
                 <h4>Designer</h4>
                 <p>
@@ -492,7 +492,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/resources/assetss/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <img src="/resources/assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
                 <h3>Jena Karlis</h3>
                 <h4>Store Owner</h4>
                 <p>
@@ -505,7 +505,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/resources/assetss/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <img src="/resources/assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
                 <h3>Matt Brandon</h3>
                 <h4>Freelancer</h4>
                 <p>
@@ -518,7 +518,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="/resources/assetss/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                <img src="/resources/assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
                 <h3>John Larson</h3>
                 <h4>Entrepreneur</h4>
                 <p>
@@ -633,18 +633,18 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="/resources/assetss/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="/resources/assetss/vendor/aos/aos.js"></script>
-  <script src="/resources/assetss/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/resources/assetss/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="/resources/assetss/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="/resources/assetss/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="/resources/assetss/vendor/typed.js/typed.umd.js"></script>
-  <script src="/resources/assetss/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="/resources/assetss/vendor/php-email-form/validate.js"></script>
+  <script src="/resources/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="/resources/assets/vendor/aos/aos.js"></script>
+  <script src="/resources/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/resources/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/resources/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/resources/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/resources/assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="/resources/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="/resources/assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="/resources/assetss/js/main.js"></script>
+  <script src="/resources/assets/js/myResume.js"></script>
 
 </body>
 

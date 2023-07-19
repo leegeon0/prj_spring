@@ -28,7 +28,7 @@
   <link href="/resources/assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="/resources/assets/css/style.css" rel="stylesheet">
+  <link href="/resources/assets/css/niceAdmin.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: NiceAdmin
@@ -554,7 +554,7 @@
   <script src="/resources/assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="/resources/assets/js/main.js"></script>
+  <script src="/resources/assets/js/niceAdmin.js"></script>
 
 </body>
 

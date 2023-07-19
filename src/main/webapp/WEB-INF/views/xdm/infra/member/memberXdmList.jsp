@@ -5,7 +5,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
-
+<jsp:useBean id="CodeServiceImpl" class="com.program.app.infra.code.CodeServiceImpl"/>
 
 
 <!DOCTYPE html>
@@ -38,7 +38,7 @@
 
 
   <!-- Template Main CSS File -->
-  <link href="/resources/assets/css/style.css" rel="stylesheet">
+  <link href="/resources/assets/css/niceAdmin.css" rel="stylesheet">
   
   <style type="text/css">
   
@@ -92,8 +92,7 @@
                 <input type="text" name="shKeyword"  value="<c:out value="${vo.shKeyword}"/>">
 	
 				<button type="button" class="btn btn-primary" id="btn">검색</button>
-					
-					
+
 				   <table class="table">
 				   
                 	<thead>
@@ -210,7 +209,7 @@
    
 
   <!-- Template Main JS File -->
-  <script src="/resources/assets/js/main.js"></script>
+  <script src="/resources/assets/js/niceAdmin.js"></script>
   
   <script src="/resources/assets/js/jquery-3.6.4.min.js"></script>
 

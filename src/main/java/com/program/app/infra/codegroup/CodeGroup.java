@@ -1,5 +1,9 @@
 package com.program.app.infra.codegroup;
 
+import java.util.List;
+
+import com.program.app.infra.code.Code;
+
 // 디비컬럼명 첫글자는 소문자
 // seq는 편의상 디비에는 int지만 자바에서는 String으로 사용된다.
 // 주로 테이블의 컬럼명과 일치
@@ -7,10 +11,13 @@ package com.program.app.infra.codegroup;
 public class CodeGroup {
 
 	private String seq;
-	private String id;
+	/* private String id; */
+	
 	private String nameFull;
-	private Integer delNy;
+	/* private Integer delNy; */
+	/* private Integer gender; */
 //	-----
+	
 	public String getSeq() {
 		return seq;
 	}
@@ -23,19 +30,16 @@ public class CodeGroup {
 	public void setNameFull(String nameFull) {
 		this.nameFull = nameFull;
 	}
-	public Integer getDelNy() {
-		return delNy;
-	}
-	public void setDelNy(Integer delNy) {
-		this.delNy = delNy;
-	}
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-
+	/*
+	 * public Integer getDelNy() { return delNy; } public void setDelNy(Integer
+	 * delNy) { this.delNy = delNy; } public String getId() { return id; } public
+	 * void setId(String id) { this.id = id; }
+	 */
+	
+	/* 보류건
+	 * public Integer getGender() { return gender; } public void setGender(Integer
+	 * gender) { this.gender = gender; }
+	 */
 
 
 }

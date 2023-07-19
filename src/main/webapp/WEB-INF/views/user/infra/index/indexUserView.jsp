@@ -58,7 +58,11 @@
                     <img src="/resources/assets/img/pree_pos.png" alt="">
                 </div>
                 <div class="user_panel">
-                    <p>반갑습니다<br><c:out value="${item.name}"></c:out>님</p>
+                	<c:choose>
+                    	<c:when test="${not empty sessionId}">
+							<p>반갑습니다<br><c:out value="${sessionId}"></c:out>님</p>
+                    	</c:when>
+                    </c:choose>
                 </div>
                 <div id="now_date">
                     <p><span id="currentDateTime"></span></p>
@@ -106,13 +110,13 @@
                             <span class="font20">환경설정</span>
                         </div>
                     </button>
-                    <button type="button" class="logout_btn">
-                        <div class="div_main_page_menu_btn">
-                            <img src="/resources/assets/img/system_shutdown.JPG" alt="">
-                            <span class="font20">로그아웃</span>
-                        </div>
-                    </button>
-                </div>
+                    		<button type="button" class="logout_btn" id="logoutBtn">
+                        		<div class="div_main_page_menu_btn">
+                            		<img src="/resources/assets/img/system_shutdown.JPG" alt="">
+                            		<span class="font20">로그아웃</span>
+                        		</div>
+                    		</button>
+                	</div>
                 </form>
                 
             </div>
@@ -122,6 +126,31 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
     
     <script type="text/javascript">
+    
+   $("#logoutBtn").on("click", function(){
+    	
+    	/* if(validation() == false) return false; */
+    	
+    	$.ajax({
+    		async: true 
+    		,cache: false
+    		,type: "post"
+    		/* ,dataType:"json" */
+    		,url: "/logout"
+    		/* ,data : $("#formLogin").serialize() */
+    		,data : { }
+    		,success: function(response) {
+    				location.href = "/indexUserLogin";
+    			
+    		}
+    		,error : function(jqXHR, textStatus, errorThrown){
+    			alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+    		}
+    	});
+
+// 		$("form[name=register]").attr("action", "/memberXdmList").submit();
+// 		$("form[name=register]").attr("method","post");
+    });
     
   $("#signUpBtn").on("click", function(){
 		

@@ -62,6 +62,11 @@ public class MemberDao{
 		
 	}
 	
+	public int selecOneCheckId(MemberVo vo) {
+		return sqlSession.selectOne(namespace + ".selectOneCheckId", vo) ;
+		
+	}
+	
 
 	
 	public int update(Member dto){

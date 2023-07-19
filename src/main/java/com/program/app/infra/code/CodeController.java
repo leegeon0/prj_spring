@@ -1,5 +1,6 @@
 package com.program.app.infra.code;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -21,7 +22,7 @@ public class CodeController {
 	CodeServiceImpl service;
 	
 	@RequestMapping("/codeXdmList")
-	public String codeXdmList(@ModelAttribute("vo") CodeVo vo,Model model) {
+	public String codeXdmList(@ModelAttribute("vo") CodeVo vo,Model model) throws Exception {
 		
 		/*
 		 * System.out.println("controller: vo.getShOption() : " + vo.getShOption());
@@ -35,6 +36,14 @@ public class CodeController {
 		if(vo.getTotalRows()>0) {
 			List<Code> list = service.selectList(vo);
 			model.addAttribute("list",list);
+//			
+//			List<Code> list2 = CodeServiceImpl.selectListCachedCode("1");
+//			  System.out.println(list2.size());
+//			  for(Code codeRow : list2) {
+//				  System.out.println(codeRow.getName());
+//				  
+//			  }
+//			
 		} else {
 			// by pass
 		}
@@ -113,26 +122,7 @@ public class CodeController {
 	}
 	
 	
-	/*
-	 * @RequestMapping(value = "/codeGroupXdmList") public String
-	 * list(@ModelAttribute("vo") CodeGroupVo vo, HttpServletRequest request, Model
-	 * model) { Map<String, ?> inputFlashMap =
-	 * RequestContextUtils.getInputFlashMap(request); if(null != inputFlashMap) {
-	 * model.addAttribute("msg",(String) inputFlashMap.get("msg")); }
-	 * 
-	 * Pagination pagination = new Pagination();
-	 * pagination.setCurrentPageNo(vo.getPageIndex());
-	 * pagination.setRecordCountPerPage(vo.getPageUnit());
-	 * pagination.setPageSize(vo.getPageSize());
-	 * 
-	 * vo.setFirstIndex(pagination.getFirstRecordIndex());
-	 * vo.setRecordCountPerPage(pagination.getRecordCountPerPage());
-	 * 
-	 * List<CodeGroup> codeList = service.selectList(vo); int totCnt =
-	 * service.selectList(vo);
-	 * 
-	 * return "xdm/infra/codegroup/codeGroupXdmList"; }
-	 */
+
 	
 	
 	

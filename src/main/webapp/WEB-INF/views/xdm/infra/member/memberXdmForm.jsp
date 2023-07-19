@@ -87,7 +87,7 @@
 
 
   <!-- Template Main CSS File -->
-  <link href="/resources/assets/css/style.css" rel="stylesheet">
+  <link href="/resources/assets/css/niceAdmin.css" rel="stylesheet">
   
   <style type="text/css">
   
@@ -251,12 +251,41 @@
    
 
   <!-- Template Main JS File -->
-  <script src="/resources/assets/js/main.js"></script>
+  <script src="/resources/assets/js/niceAdmin.js"></script>
   
   <script src="/resources/assets/js/jquery-3.6.4.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
   
   <script type="text/javascript">
+ /*  
+  $("#name").on("blur", function(){
+  	
+  	
+  	$.ajax({
+  		async: true 
+  		,cache: false
+  		,type: "post"
+
+  		,url: "/check"
+
+  		,data : { "name" : $("#name").val()}
+  		,success: function(response) {
+  			if(response.rt == "available") {
+  				alert("사용가능합니다.")
+  			} else {
+  				alert("다른이름으로 작성해주세요.");
+  				
+  				
+  			}
+  		}
+  		,error : function(jqXHR, textStatus, errorThrown){
+  			alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+  		}
+  	});
+
+  });
+   */
+  
   	$("#submitBtn").on("click",function(){
 	 	
 /* 	    var delNyValue = $("#delNy").val();
@@ -271,15 +300,40 @@
 	 	$("form[name=form]").attr("action","/memberXdmInsert").submit();
 	 	 
 	});
-  
-  
+   
+  	$("#updateBtn").on("click", function(event) {
+  	    event.preventDefault(); // 폼의 제출을 중단합니다.
+
+  	    // 이름을 검증하는 AJAX 요청
+  	    $.ajax({
+  	        async: true,
+  	        cache: false,
+  	        type: "post",
+  	        url: "/check",
+  	        data: { "name": $("#name").val() },
+  	        success: function(response) {
+  	            if (response.rt == "available") {
+  	                // 이름이 사용 가능한 경우 폼을 제출합니다.
+  	                alert("사용가능합니다.");
+  	                $("form[name=form]").attr("action", "/memberUpdt").submit();
+  	            } else {
+  	                // 이름이 사용 불가능한 경우 경고 메시지를 표시합니다.
+  	                alert("다른 이름으로 작성해주세요.");
+  	            }
+  	        },
+  	        error: function(jqXHR, textStatus, errorThrown) {
+  	            alert("ajaxUpdate " + jqXHR.status + " : " + errorThrown);
+  	        }
+  	    });
+  	});
+/*   
 	  $("#updateBtn").on("click",function(){
 	 	
 	 	
 	 	$("form[name=form]").attr("action","/memberUpdt").submit();
 	 	 
 	  });
-	  
+	   */
 	  $("#deleteBtn").on("click",function(){
 	 		
 	 		
@@ -294,7 +348,7 @@
 	 		$("form[name=form]").attr("action","/memberUele").submit();
 	 		 
 	 });
-	  
+	 
 
 
   

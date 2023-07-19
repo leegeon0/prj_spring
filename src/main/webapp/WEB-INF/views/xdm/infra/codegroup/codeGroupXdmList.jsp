@@ -80,7 +80,7 @@
   <link href="/resources/assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="/resources/assets/css/style.css" rel="stylesheet">
+  <link href="/resources/assets/css/niceAdmin.css" rel="stylesheet">
   
   <style type="text/css">
   
@@ -153,9 +153,7 @@
 				  	 -->
 		                <tr>
 		                    <th scope="col">seq</th>
-		                    <th scope="col">id</th>
 		                    <th scope="col">nameFull</th>
-		                    <th scope="col">delNy</th>
 		                </tr>
                 	</thead>
 	                <tbody>
@@ -169,9 +167,7 @@
 							<c:forEach items="${list}" var="list" varStatus="status">
 							<tr>
 								<td><c:out value="${list.seq}"></c:out></td>
-								<td><c:out value="${list.id}"></c:out></td>
 								<td><a href="codeGroupXdmForm?seq=<c:out value="${list.seq}"/>"><c:out value="${list.nameFull}"/></a></td>
-								<td><c:out value="${list.delNy}"></c:out><br></td>
 							</tr>
 							</c:forEach>
 						</c:otherwise>
@@ -239,7 +235,7 @@
    
 
   <!-- Template Main JS File -->
-  <script src="/resources/assets/js/main.js"></script>
+  <script src="/resources/assets/js/niceAdmin.js"></script>
   
   <script src="/resources/assets/js/jquery-3.6.4.min.js"></script>
   

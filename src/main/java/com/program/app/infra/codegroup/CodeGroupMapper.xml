@@ -29,7 +29,6 @@
  
  	<sql id="abc">
  		seq,
- 		id,
  		nameFull,
  		delNy
  	</sql>
@@ -90,7 +89,6 @@
  	update
  		codegroup
  	set
- 		id = #{id},
  		nameFull = #{nameFull}
  	where 1=1
  		and seq = #{seq}
@@ -107,11 +105,9 @@
  <insert id="insert">
  	insert into 
  	codegroup(
- 		id,
  		nameFull,
  		delNy
  		)value(
- 			#{id},
  			#{nameFull},
 		 <choose>
             <when test="delNy == null or delNy == '' or delNy == 0">

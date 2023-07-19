@@ -4,16 +4,17 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.support.RequestContextUtils;
+
+import com.program.app.infra.code.Code;
+import com.program.app.infra.code.CodeServiceImpl;
 
 
 
@@ -23,7 +24,7 @@ public class MemberController {
 	MemberServiceImpl service;
 	
 	@RequestMapping("/memberXdmList")
-	public String memberXdmList(@ModelAttribute("vo") MemberVo vo,Model model) {
+	public String memberXdmList(@ModelAttribute("vo") MemberVo vo,Model model) throws Exception {
 		
 		/*
 		 * System.out.println("controller: vo.getShOption() : " + vo.getShOption());
@@ -37,6 +38,15 @@ public class MemberController {
 		if(vo.getTotalRows()>0) {
 			List<Member> list = service.selectList(vo);
 			model.addAttribute("list",list);
+			
+//			List<Code> a = CodeServiceImpl.selectListCachedCode("1");
+//			
+//			for(Code b : CodeServiceImpl.selectListCachedCode("1")) {
+//				System.out.println(b.getName());
+//			}
+//			model.addAttribute("listCodeGender",CodeServiceImpl.selectListCachedCode("1"));
+//			
+			
 		} else {
 			// by pass
 		}
@@ -125,13 +135,17 @@ public class MemberController {
 	
 	@ResponseBody
 	@RequestMapping("/login")
-	public Map<String, Object> loginMember(MemberVo vo) {
+	public Map<String, Object> loginMember(MemberVo vo, HttpSession httpSession ) {
 		
 		Map<String, Object> returnMap = new HashMap<String, Object>();
 		
 		Member rtMember = service.selectTwo(vo);
 		
 		if(rtMember != null) {
+			
+			httpSession.setMaxInactiveInterval(60*60);	//60min
+			httpSession.setAttribute("sessionId", vo.getId());
+			
 			returnMap.put("rtMember", rtMember);
 			returnMap.put("rt", "success");
 		}else {
@@ -140,6 +154,36 @@ public class MemberController {
 		
 		return returnMap;
 	}
+	
+	@ResponseBody
+	@RequestMapping("/logout")
+	public Map<String, Object> logoutMember(HttpSession httpSession ) {
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+		httpSession.invalidate();
+		returnMap.put("rt", "success");
+		return returnMap;
+	}
+	
+
+	@ResponseBody
+	@RequestMapping("/check")
+	public Map<String, Object> checkName(MemberVo vo) {
+		
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+		
+		int rtNum = service.selectOneCheckId(vo);
+		
+		if(rtNum == 0) {
+			returnMap.put("rt", "available");
+			
+		}else {
+			returnMap.put("rt", "unavailable");
+		}
+		
+		return returnMap;
+	}
+	
+	
 	
 	/*
 	 * @RequestMapping(value = "/codeGroupXdmList") public String
