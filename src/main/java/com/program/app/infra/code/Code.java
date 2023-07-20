@@ -12,10 +12,11 @@ public class Code {
 	private String seq;
 	private String name;
 	private String delNy;
+	private String codegroup_seq;
 	/*
 	 * private Integer age; private Integer gender;
 	 */
-	private String codegroup_seq;
+	
 	
 	/* 보류건
 	 * private String man; private String woman; private String etc;
