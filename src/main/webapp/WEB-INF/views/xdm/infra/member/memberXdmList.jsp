@@ -195,7 +195,9 @@
 
   <%@include file="memberXdmListBottom.jsp"%>
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+   <script src="/resources/assets/js/jquery-3.6.4.min.js"></script>
+  <script src="/resources/assets/js/constantsXdm.js"></script>
+  <script src="/resources/assets/js/commonXdm.js"></script>
 
   <!-- Vendor JS Files -->
   <script src="/resources/assets/vendor/apexcharts/apexcharts.min.js"></script>
@@ -211,7 +213,6 @@
   <!-- Template Main JS File -->
   <script src="/resources/assets/js/niceAdmin.js"></script>
   
-  <script src="/resources/assets/js/jquery-3.6.4.min.js"></script>
 
   
   <script type="text/javascript">
