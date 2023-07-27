@@ -194,8 +194,8 @@
  </update>
  
  
- 
- <!-- uploaded s -->
+ <!-- 
+
 	<insert id="insertUploaded">
 		INSERT INTO ${tableName} (
 			type
@@ -223,6 +223,6 @@
 			,#{pseq}
 		)
 	</insert>
- 
+  -->
 
  </mapper>
