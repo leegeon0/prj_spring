@@ -194,5 +194,35 @@
  </update>
  
  
+ 
+ <!-- uploaded s -->
+	<insert id="insertUploaded">
+		INSERT INTO ${tableName} (
+			type
+			,defaultNy
+			,sort
+			,path
+			,originalName
+			,uuidName
+			,ext
+			,size
+			,delNy
+			<include refid="Base.insertRegColumn" />
+			,pseq
+		) values (
+			#{type}
+			,#{defaultNy}
+			,#{sort}
+			,#{path}
+			,#{originalName}
+			,#{uuidName}
+			,#{ext}
+			,#{size}
+			,0
+			<include refid="Base.insertRegValue" />
+			,#{pseq}
+		)
+	</insert>
+ 
 
  </mapper>

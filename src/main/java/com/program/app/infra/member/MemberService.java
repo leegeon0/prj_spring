@@ -21,7 +21,7 @@ public interface MemberService {
 	
 	public int delete(Member dto);
 	
-	public int insert(Member dto);
+	public int insert(Member dto) throws Exception;
 	
 	public int uelete(Member dto);
 	

@@ -101,7 +101,7 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Datatables Edit</h5>
-               <form class="submitForm" name="form" method="post">
+               <form class="submitForm" name="form" method="post"  autocomplete="off" enctype="multipart/form-data">
                <div class="col-sm-12 text-center">
         
 			      		<c:set var="type" value="1"/>		<!-- #-> -->

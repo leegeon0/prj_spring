@@ -13,9 +13,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.program.app.infra.code.Code;
-import com.program.app.infra.code.CodeServiceImpl;
-
 
 
 @Controller
@@ -102,7 +99,7 @@ public class MemberController {
 	
 	
 	@RequestMapping("/memberInsert")
-	public String memberInsert(Member dto) {
+	public String memberInsert(Member dto) throws Exception {
 		
 		System.out.println("memberInsert");
 		service.insert(dto);
@@ -124,7 +121,7 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/memberXdmInsert")
-	public String memberXdmInsert(Member dto) {
+	public String memberXdmInsert(Member dto) throws Exception {
 		
 		System.out.println("memberXdmInsert");
 		service.insert(dto);
