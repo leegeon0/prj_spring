@@ -1,9 +1,16 @@
 package com.program.app.infra.member;
 
+import java.io.File;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.mysql.cj.Constants;
 
 @Service
 public class MemberServiceImpl implements MemberService{
@@ -67,12 +74,8 @@ public class MemberServiceImpl implements MemberService{
 		// TODO Auto-generated method stub
 		return dao.uelete(dto);
 	}
-
-
-
-
-
 	
+
 
 	
 	

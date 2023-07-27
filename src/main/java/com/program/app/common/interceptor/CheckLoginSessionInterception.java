@@ -15,7 +15,7 @@ public class CheckLoginSessionInterception extends HandlerInterceptorAdapter{
 		if (request.getSession().getAttribute("sessionId") != null) {
 			// by pass
 		} else {
-			response.sendRedirect("/loginPage");
+			response.sendRedirect("/indexUserLogin");
             return false;
 		}
 		

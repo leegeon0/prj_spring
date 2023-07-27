@@ -112,7 +112,7 @@
  		)value(
  			#{name},
  			#{delNy},
- 			#[cdegroup_seq]
+ 			#{cdegroup_seq}
 <!-- 		 <choose>
             <when test="delNy == null or delNy == '' or delNy == 0">
                 0

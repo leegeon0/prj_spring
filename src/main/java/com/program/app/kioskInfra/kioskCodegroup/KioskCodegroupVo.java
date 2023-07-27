@@ -1,9 +1,6 @@
-package com.program.app.infra.member;
+package com.program.app.kioskInfra.kioskCodegroup;
 
-import org.springframework.web.multipart.MultipartFile;
-
-public class MemberVo {
-	
+public class KioskCodegroupVo {
 //	paging
 	private int thisPage = 1;									// 현재 페이지
 //	private int rowNumToShow = Constants.ROW_NUM_TO_SHOW;		// 화면에 보여줄 데이터 줄 갯수
@@ -26,20 +23,7 @@ public class MemberVo {
 	
 	private Integer shOption;
 	private String shKeyword;
-	private String seq;
-	private String id;
-	private String password;
-	private String name;
-	private String memberAddress;
-	private String memberTel;
-	private String salesType;
-	private String companyAddress;
-	private String companyTel;
-	private String delNy;
-
-	
-	
-
+	private String codegroupSeq;
 // ----------
 	public Integer getShOption() {
 		return shOption;
@@ -53,69 +37,14 @@ public class MemberVo {
 	public void setShKeyword(String shKeyword) {
 		this.shKeyword = shKeyword;
 	}
-	public String getSeq() {
-		return seq;
-	}
-	public void setSeq(String seq) {
-		this.seq = seq;
-	}
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getMemberAddress() {
-		return memberAddress;
-	}
-	public void setMemberAddress(String memberAddress) {
-		this.memberAddress = memberAddress;
-	}
-	public String getMemberTel() {
-		return memberTel;
-	}
-	public void setMemberTel(String memberTel) {
-		this.memberTel = memberTel;
-	}
-	public String getSalesType() {
-		return salesType;
-	}
-	public void setSalesType(String salesType) {
-		this.salesType = salesType;
-	}
-	public String getCompanyAddress() {
-		return companyAddress;
-	}
-	public void setCompanyAddress(String companyAddress) {
-		this.companyAddress = companyAddress;
-	}
-	public String getCompanyTel() {
-		return companyTel;
-	}
-	public void setCompanyTel(String companyTel) {
-		this.companyTel = companyTel;
-	}
-	public String getDelNy() {
-		return delNy;
-	}
-	public void setDelNy(String delNy) {
-		this.delNy = delNy;
-	}
 
 	
-	
+	public String getCodegroupSeq() {
+		return codegroupSeq;
+	}
+	public void setCodegroupSeq(String codegroupSeq) {
+		this.codegroupSeq = codegroupSeq;
+	}
 	public int getThisPage() {
 		return thisPage;
 	}
@@ -232,16 +161,4 @@ public class MemberVo {
 			System.out.println("getStartRnumForMysql(): " + getStartRnumForMysql());
 			
 		}
-	
-	
-	
-	
-	
-//	------------------
-	
-
-
-
-	
-
 }

@@ -1,4 +1,4 @@
-package com.program.app.infra.codegroup;
+package com.program.app.kioskInfra.kioskCodegroup;
 
 import java.util.List;
 
@@ -8,66 +8,48 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-
-
 @Repository
-
-public class CodeGroupDao{
+public class KioskCodegroupDao {
 	
 	@Inject
 	@Resource(name = "sqlSession")
 	private SqlSession sqlSession;
 	
-	private static String namespace = "com.program.app.infra.codegroup.CodeGroupMapper";
+	private static String namespace = "com.program.app.kioskInfra.kioskCodegroup.KioskCodegroupMapper";
 	
-	
-	public int selectOneCount(CodeGroupVo vo){
+	public int selectOneCount(KioskCodegroupVo vo){
 		
 		return sqlSession.selectOne(namespace + ".selectOneCount", vo);
 		
 		}
 	
 	
-	public List<CodeGroup> selectList(CodeGroupVo vo){
+	public List<KioskCodegroup> selectList(KioskCodegroupVo vo){
 		
 		return sqlSession.selectList(namespace + ".selectList", vo);
 		
 	}
 	
-	public CodeGroup selectOne(CodeGroupVo vo){
-		
-		CodeGroup codeGroup = sqlSession.selectOne(namespace + ".selectOne", vo);
-		return codeGroup;
+	public KioskCodegroup selectOne(KioskCodegroupVo vo) {
+		return sqlSession.selectOne(namespace + ".selectOne", vo);
 		
 	}
 	
 	
-	public int update(CodeGroup dto){
-//		
-//		int codeGroup2 = sqlSession.update(namespace + ".update", dto);
-//		return codeGroup2;
+	public int update(KioskCodegroup dto) {
 		return sqlSession.update(namespace + ".update", dto);
-		
 	}
 	
-	public int delete(CodeGroup dto){
-
+	public int delete(KioskCodegroup dto) {
 		return sqlSession.delete(namespace + ".delete", dto);
-		
 	}
 	
-	public int insert(CodeGroup dto){
-
+	public int insert(KioskCodegroup dto) {
 		return sqlSession.insert(namespace + ".insert", dto);
-		
 	}
 	
-	public int uelete(CodeGroup dto){
-
+	public int uelete(KioskCodegroup dto) {
 		return sqlSession.update(namespace + ".uelete", dto);
-		
 	}
-	
-	
 	
 }

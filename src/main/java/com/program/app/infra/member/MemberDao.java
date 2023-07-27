@@ -95,6 +95,8 @@ public class MemberDao{
 		
 	}
 	
+	public int insertUploaded(Member dto) { return sqlSession.insert(namespace + ".insertUploaded", dto); }
+	
 	
 	
 }

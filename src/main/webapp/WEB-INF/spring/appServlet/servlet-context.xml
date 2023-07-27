@@ -27,11 +27,14 @@
 	<!-- session interceptor s 2023.07.18 for logincheck -->
 	<interceptors>
 		<interceptor>
+			<!-- 모든 URL에 interceptor 적용 -->
 			<mapping path="/**"/>
+			
+			<!-- 과정을 거치지 않고 패스할 파일 -->
 			<exclude-mapping path="/resources/**" />
-			<exclude-mapping path="/" />
+			<exclude-mapping path="/" /> 
 			<exclude-mapping path="/biographyUserView" />
-			<exclude-mapping path="/indexUserView" />
+			<exclude-mapping path="/kioskXdmView" />
 			<exclude-mapping path="/indexUserLogin" />
 			<exclude-mapping path="/login" />
 			<beans:bean id="checkLoginSessionInterception" class="com.program.app.common.interceptor.CheckLoginSessionInterception"/>
