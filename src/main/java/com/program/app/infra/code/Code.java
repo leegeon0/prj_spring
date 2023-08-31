@@ -2,7 +2,7 @@ package com.program.app.infra.code;
 
 import java.util.ArrayList;
 import java.util.List;
-
+  
 // 디비컬럼명 첫글자는 소문자
 // seq는 편의상 디비에는 int지만 자바에서는 String으로 사용된다.
 // 주로 테이블의 컬럼명과 일치
